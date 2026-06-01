@@ -161,8 +161,8 @@
 
 ## T1.3 — Configurar TypeScript
 
-- [ ] S1.3.1 — Instalar TypeScript na raiz: `pnpm add -Dw typescript`
-- [ ] S1.3.2 — Criar `tsconfig.base.json` na raiz com configuração compartilhada:
+- [x] S1.3.1 — Instalar TypeScript na raiz: `pnpm add -Dw typescript`
+- [x] S1.3.2 — Criar `tsconfig.base.json` na raiz com configuração compartilhada:
   ```json
   {
     "compilerOptions": {
@@ -181,10 +181,10 @@
     }
   }
   ```
-- [ ] S1.3.3 — Criar `tsconfig.json` em cada pacote herdando de `../../tsconfig.base.json`
-- [ ] S1.3.4 — Configurar `outDir: "dist"` e `rootDir: "src"` em cada pacote
-- [ ] S1.3.5 — Adicionar `include: ["src"]` em cada `tsconfig.json` de pacote
-- [ ] S1.3.6 — Testar compilação em um pacote vazio com arquivo `src/index.ts` placeholder
+- [x] S1.3.3 — Criar `tsconfig.json` em cada pacote herdando de `../../tsconfig.base.json`
+- [x] S1.3.4 — Configurar `outDir: "dist"` e `rootDir: "src"` em cada pacote
+- [x] S1.3.5 — Adicionar `include: ["src"]` em cada `tsconfig.json` de pacote
+- [x] S1.3.6 — Testar compilação em um pacote vazio com arquivo `src/index.ts` placeholder
 
 ---
 
