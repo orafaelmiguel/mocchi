@@ -190,8 +190,8 @@
 
 ## T1.4 — Configurar build com tsup
 
-- [ ] S1.4.1 — Instalar tsup em cada pacote: `pnpm add -D tsup` (rodar de dentro de cada pasta ou usar filter)
-- [ ] S1.4.2 — Criar `tsup.config.ts` em cada pacote:
+- [x] S1.4.1 — Instalar tsup em cada pacote: `pnpm add -D tsup` (rodar de dentro de cada pasta ou usar filter)
+- [x] S1.4.2 — Criar `tsup.config.ts` em cada pacote:
   ```ts
   import { defineConfig } from 'tsup'
   export default defineConfig({
@@ -202,18 +202,18 @@
     sourcemap: true,
   })
   ```
-- [ ] S1.4.3 — Adicionar script `"build": "tsup"` no `package.json` de cada pacote
-- [ ] S1.4.4 — Adicionar script `"build": "pnpm -r build"` no `package.json` raiz
-- [ ] S1.4.5 — Testar build completo do monorepo: `pnpm build`
-- [ ] S1.4.6 — Verificar que `dist/` é gerado corretamente em cada pacote
-- [ ] S1.4.7 — Adicionar `dist/` ao `.gitignore`
+- [x] S1.4.3 — Adicionar script `"build": "tsup"` no `package.json` de cada pacote
+- [x] S1.4.4 — Adicionar script `"build": "pnpm -r build"` no `package.json` raiz
+- [x] S1.4.5 — Testar build completo do monorepo: `pnpm build`
+- [x] S1.4.6 — Verificar que `dist/` é gerado corretamente em cada pacote
+- [x] S1.4.7 — Adicionar `dist/` ao `.gitignore`
 
 ---
 
 ## T1.5 — Configurar ESLint
 
-- [ ] S1.5.1 — Instalar dependências: `pnpm add -Dw eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier`
-- [ ] S1.5.2 — Criar `eslint.config.mjs` na raiz (flat config do ESLint 9):
+- [x] S1.5.1 — Instalar dependências: `pnpm add -Dw eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier`
+- [x] S1.5.2 — Criar `eslint.config.mjs` na raiz (flat config do ESLint 9):
   ```js
   import tsPlugin from '@typescript-eslint/eslint-plugin'
   import tsParser from '@typescript-eslint/parser'
@@ -231,17 +231,17 @@
     }
   ]
   ```
-- [ ] S1.5.3 — Adicionar script `"lint": "eslint ."` na raiz
-- [ ] S1.5.4 — Adicionar script `"lint:fix": "eslint . --fix"` na raiz
-- [ ] S1.5.5 — Testar lint: `pnpm lint`
-- [ ] S1.5.6 — Criar `.eslintignore` com `dist/`, `node_modules/`, `coverage/`
+- [x] S1.5.3 — Adicionar script `"lint": "eslint ."` na raiz
+- [x] S1.5.4 — Adicionar script `"lint:fix": "eslint . --fix"` na raiz
+- [x] S1.5.5 — Testar lint: `pnpm lint`
+- [x] S1.5.6 — Criar `.eslintignore` com `dist/`, `node_modules/`, `coverage/`
 
 ---
 
 ## T1.6 — Configurar Prettier
 
-- [ ] S1.6.1 — Instalar: `pnpm add -Dw prettier`
-- [ ] S1.6.2 — Criar `.prettierrc` na raiz:
+- [x] S1.6.1 — Instalar: `pnpm add -Dw prettier`
+- [x] S1.6.2 — Criar `.prettierrc` na raiz:
   ```json
   {
     "semi": false,
@@ -251,10 +251,10 @@
     "tabWidth": 2
   }
   ```
-- [ ] S1.6.3 — Criar `.prettierignore` cobrindo `dist/`, `node_modules/`, `*.md`
-- [ ] S1.6.4 — Adicionar script `"format": "prettier --write ."` na raiz
-- [ ] S1.6.5 — Adicionar script `"format:check": "prettier --check ."` na raiz
-- [ ] S1.6.6 — Testar: `pnpm format`
+- [x] S1.6.3 — Criar `.prettierignore` cobrindo `dist/`, `node_modules/`, `*.md`
+- [x] S1.6.4 — Adicionar script `"format": "prettier --write ."` na raiz
+- [x] S1.6.5 — Adicionar script `"format:check": "prettier --check ."` na raiz
+- [x] S1.6.6 — Testar: `pnpm format`
 
 ---
 

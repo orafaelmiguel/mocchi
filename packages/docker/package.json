@@ -3,5 +3,11 @@
   "version": "0.0.0",
   "description": "Docker and Docker Compose integration for Mocchi.",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1"
+  }
 }
