@@ -149,13 +149,13 @@
 
 ## T1.2 — Criar estrutura de pastas do monorepo
 
-- [ ] S1.2.1 — Criar `packages/cli/` com `package.json` mínimo
-- [ ] S1.2.2 — Criar `packages/core/` com `package.json` mínimo
-- [ ] S1.2.3 — Criar `packages/postgres/` com `package.json` mínimo
-- [ ] S1.2.4 — Criar `packages/docker/` com `package.json` mínimo
-- [ ] S1.2.5 — Criar `packages/config/` com `package.json` mínimo
-- [ ] S1.2.6 — Criar `examples/` com `.gitkeep`
-- [ ] S1.2.7 — Criar `docs/` com `.gitkeep`
+- [x] S1.2.1 — Criar `packages/cli/` com `package.json` mínimo
+- [x] S1.2.2 — Criar `packages/core/` com `package.json` mínimo
+- [x] S1.2.3 — Criar `packages/postgres/` com `package.json` mínimo
+- [x] S1.2.4 — Criar `packages/docker/` com `package.json` mínimo
+- [x] S1.2.5 — Criar `packages/config/` com `package.json` mínimo
+- [x] S1.2.6 — Criar `examples/` com `.gitkeep`
+- [x] S1.2.7 — Criar `docs/` com `.gitkeep`
 
 ---
 

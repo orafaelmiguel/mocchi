@@ -1,0 +1,7 @@
+{
+  "name": "@sandbase/cli",
+  "version": "0.0.0",
+  "description": "Command-line interface for Sandbase.",
+  "license": "MIT",
+  "type": "module"
+}

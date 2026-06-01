@@ -1,0 +1,7 @@
+{
+  "name": "@sandbase/config",
+  "version": "0.0.0",
+  "description": "Configuration loading and validation for Sandbase.",
+  "license": "MIT",
+  "type": "module"
+}
