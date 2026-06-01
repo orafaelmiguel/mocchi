@@ -1,5 +1,5 @@
 {
-  "name": "sandbase",
+  "name": "mocchi",
   "version": "0.0.0",
   "private": true,
   "description": "Disposable PostgreSQL sandboxes for dangerous migrations, queries and integration tests.",

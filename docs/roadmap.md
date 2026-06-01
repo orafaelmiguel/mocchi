@@ -1,4 +1,4 @@
-# SANDBASE — Roadmap de Desenvolvimento Solo
+# MOCCHI — Roadmap de Desenvolvimento Solo
 > Versão: 1.0 | Status: Planning | Autor: Solo Dev
 
 ---
@@ -7,25 +7,25 @@
 
 1. [Fase 0 — Fundação do projeto](#fase-0)
 2. [Fase 1 — Infraestrutura do monorepo](#fase-1)
-3. [Fase 2 — Pacote `@sandbase/config`](#fase-2)
-4. [Fase 3 — Pacote `@sandbase/postgres`](#fase-3)
-5. [Fase 4 — Pacote `@sandbase/docker`](#fase-4)
-6. [Fase 5 — Pacote `@sandbase/core`](#fase-5)
-7. [Fase 6 — Pacote `@sandbase/cli` — Scaffold](#fase-6)
-8. [Fase 7 — Comando `sandbase doctor`](#fase-7)
-9. [Fase 8 — Comando `sandbase init`](#fase-8)
-10. [Fase 9 — Comando `sandbase ready`](#fase-9)
-11. [Fase 10 — Comando `sandbase down`](#fase-10)
-12. [Fase 11 — Comando `sandbase run`](#fase-11)
-13. [Fase 12 — Comando `sandbase reset`](#fase-12)
-14. [Fase 13 — Comando `sandbase shell`](#fase-13)
+3. [Fase 2 — Pacote `@mocchi/config`](#fase-2)
+4. [Fase 3 — Pacote `@mocchi/postgres`](#fase-3)
+5. [Fase 4 — Pacote `@mocchi/docker`](#fase-4)
+6. [Fase 5 — Pacote `@mocchi/core`](#fase-5)
+7. [Fase 6 — Pacote `@mocchi/cli` — Scaffold](#fase-6)
+8. [Fase 7 — Comando `mocchi doctor`](#fase-7)
+9. [Fase 8 — Comando `mocchi init`](#fase-8)
+10. [Fase 9 — Comando `mocchi ready`](#fase-9)
+11. [Fase 10 — Comando `mocchi down`](#fase-10)
+12. [Fase 11 — Comando `mocchi run`](#fase-11)
+13. [Fase 12 — Comando `mocchi reset`](#fase-12)
+14. [Fase 13 — Comando `mocchi shell`](#fase-13)
 15. [Fase 14 — v0.1 Release — Hardening e qualidade](#fase-14)
-16. [Fase 15 — Comando `sandbase sql`](#fase-15)
+16. [Fase 15 — Comando `mocchi sql`](#fase-15)
 17. [Fase 16 — Sistema de scenarios](#fase-16)
-18. [Fase 17 — Comando `sandbase verify`](#fase-17)
+18. [Fase 17 — Comando `mocchi verify`](#fase-17)
 19. [Fase 18 — v0.2 Release — Hardening e qualidade](#fase-18)
-20. [Fase 19 — Comando `sandbase migrate:test`](#fase-19)
-21. [Fase 20 — Comando `sandbase migrate:report`](#fase-20)
+20. [Fase 19 — Comando `mocchi migrate:test`](#fase-19)
+21. [Fase 20 — Comando `mocchi migrate:report`](#fase-20)
 22. [Fase 21 — v0.3 Release — Hardening e qualidade](#fase-21)
 23. [Fase 22 — Template database cache](#fase-22)
 24. [Fase 23 — Warm mode e snapshot](#fase-23)
@@ -69,7 +69,7 @@
 
 ## T0.1 — Definir estrutura de repositório
 
-- [x] S0.1.1 — Criar repositório no GitHub com nome `sandbase`
+- [x] S0.1.1 — Criar repositório no GitHub com nome `mocchi`
 - [x] S0.1.2 — Definir visibilidade inicial como pública (open source desde o começo)
 - [x] S0.1.3 — Adicionar descrição: `Disposable PostgreSQL sandboxes for dangerous migrations, queries and integration tests.`
 - [x] S0.1.4 — Adicionar topics no GitHub: `postgresql`, `cli`, `developer-tools`, `testing`, `backend`, `database`, `migrations`, `nodejs`, `typescript`
@@ -84,7 +84,7 @@
 
 - [x] S0.2.1 — Criar `README.md` mínimo com nome, tagline e status `🚧 Under active development`
 - [x] S0.2.2 — Criar `LICENSE` — escolher MIT (melhor para adoção open source)
-- [x] S0.2.3 — Criar `.gitignore` cobrindo: `node_modules`, `dist`, `.env*`, `.sandbase*`, `*.js.map`, `coverage`
+- [x] S0.2.3 — Criar `.gitignore` cobrindo: `node_modules`, `dist`, `.env*`, `.mocchi*`, `*.js.map`, `coverage`
 - [x] S0.2.4 — Criar `CONTRIBUTING.md` inicial (pode ser esqueleto por enquanto)
 - [x] S0.2.5 — Criar `CHANGELOG.md` inicial com seção `[Unreleased]`
 - [x] S0.2.6 — Criar `CODE_OF_CONDUCT.md` (copiar Contributor Covenant)
@@ -346,12 +346,12 @@
 
 ## T1.10 — Configurar inter-dependências de pacotes
 
-- [ ] S1.10.1 — Adicionar `@sandbase/config` como dependência de `@sandbase/core` no `package.json`
-- [ ] S1.10.2 — Adicionar `@sandbase/postgres` como dependência de `@sandbase/core`
-- [ ] S1.10.3 — Adicionar `@sandbase/docker` como dependência de `@sandbase/core`
-- [ ] S1.10.4 — Adicionar `@sandbase/core` como dependência de `@sandbase/cli`
+- [ ] S1.10.1 — Adicionar `@mocchi/config` como dependência de `@mocchi/core` no `package.json`
+- [ ] S1.10.2 — Adicionar `@mocchi/postgres` como dependência de `@mocchi/core`
+- [ ] S1.10.3 — Adicionar `@mocchi/docker` como dependência de `@mocchi/core`
+- [ ] S1.10.4 — Adicionar `@mocchi/core` como dependência de `@mocchi/cli`
 - [ ] S1.10.5 — Rodar `pnpm install` para linkar pacotes locais via workspace
-- [ ] S1.10.6 — Verificar que `node_modules/@sandbase/core` aponta para `packages/core` (symlink)
+- [ ] S1.10.6 — Verificar que `node_modules/@mocchi/core` aponta para `packages/core` (symlink)
 - [ ] S1.10.7 — Configurar `exports` no `package.json` de cada pacote:
   ```json
   {
@@ -378,9 +378,9 @@
 
 ---
 
-# FASE 2 — Pacote `@sandbase/config` {#fase-2}
+# FASE 2 — Pacote `@mocchi/config` {#fase-2}
 
-**Objetivo:** Implementar o sistema de carregamento de configuração. Todo o projeto depende disso. Deve ser feito primeiro porque todos os outros pacotes vão importar de `@sandbase/config`.
+**Objetivo:** Implementar o sistema de carregamento de configuração. Todo o projeto depende disso. Deve ser feito primeiro porque todos os outros pacotes vão importar de `@mocchi/config`.
 
 **Duração estimada:** 3–5 horas
 
@@ -436,9 +436,9 @@
     ttl?: string
   }
   ```
-- [ ] S2.1.9 — Definir tipo principal `SandbaseConfig`:
+- [ ] S2.1.9 — Definir tipo principal `MocchiConfig`:
   ```ts
-  export type SandbaseConfig = {
+  export type MocchiConfig = {
     project: string
     database: DatabaseConfig
     docker?: DockerConfig
@@ -447,16 +447,16 @@
     sandbox?: SandboxConfig
   }
   ```
-- [ ] S2.1.10 — Definir tipo `ResolvedSandbaseConfig` com todos os campos opcionais preenchidos com defaults
+- [ ] S2.1.10 — Definir tipo `ResolvedMocchiConfig` com todos os campos opcionais preenchidos com defaults
 
 ---
 
-## T2.2 — Implementar a função `defineSandbaseConfig`
+## T2.2 — Implementar a função `defineMocchiConfig`
 
 - [ ] S2.2.1 — Criar `packages/config/src/define.ts`
 - [ ] S2.2.2 — Implementar função que apenas retorna o objeto (type safety helper, padrão Vite):
   ```ts
-  export function defineSandbaseConfig(config: SandbaseConfig): SandbaseConfig {
+  export function defineMocchiConfig(config: MocchiConfig): MocchiConfig {
     return config
   }
   ```
@@ -476,7 +476,7 @@
     ttl: '2h',
   }
   ```
-- [ ] S2.3.3 — Implementar função `resolveDefaults(config: SandbaseConfig): ResolvedSandbaseConfig`
+- [ ] S2.3.3 — Implementar função `resolveDefaults(config: MocchiConfig): ResolvedMocchiConfig`
 - [ ] S2.3.4 — Mesclar `sandbox` do usuário com `DEFAULT_SANDBOX_CONFIG`
 - [ ] S2.3.5 — Resolver `docker.autoStart` para `true` se não definido
 - [ ] S2.3.6 — Resolver `seed.optional` para `true` se não definido
@@ -489,10 +489,10 @@
 - [ ] S2.4.1 — Instalar dependência: `pnpm add jiti` no pacote config
 - [ ] S2.4.2 — Criar `packages/config/src/loader.ts`
 - [ ] S2.4.3 — Implementar função `findConfigFile(cwd: string): string | null`:
-  - Procurar por `sandbase.config.ts` no diretório atual
+  - Procurar por `mocchi.config.ts` no diretório atual
   - Subir até a raiz se não encontrar (limitar a 5 níveis)
   - Retornar `null` se não encontrar
-- [ ] S2.4.4 — Implementar função `loadConfigFile(filePath: string): SandbaseConfig`:
+- [ ] S2.4.4 — Implementar função `loadConfigFile(filePath: string): MocchiConfig`:
   - Usar `jiti` para carregar o arquivo TypeScript sem compilação
   - Lidar com `export default` e `module.exports`
   - Validar que o retorno é um objeto
@@ -505,7 +505,7 @@
 ## T2.5 — Implementar validação de configuração
 
 - [ ] S2.5.1 — Criar `packages/config/src/validator.ts`
-- [ ] S2.5.2 — Implementar `validateConfig(config: unknown): SandbaseConfig`:
+- [ ] S2.5.2 — Implementar `validateConfig(config: unknown): MocchiConfig`:
   - Verificar que `project` é string não vazia
   - Verificar que `database.provider` é `'postgres'`
   - Verificar que `database.sourceEnv` é string não vazia
@@ -520,7 +520,7 @@
 ## T2.6 — Implementar resolver de variáveis de ambiente
 
 - [ ] S2.6.1 — Criar `packages/config/src/env.ts`
-- [ ] S2.6.2 — Implementar função `resolveEnvVars(config: ResolvedSandbaseConfig, env: NodeJS.ProcessEnv): ResolvedSandbaseConfig`
+- [ ] S2.6.2 — Implementar função `resolveEnvVars(config: ResolvedMocchiConfig, env: NodeJS.ProcessEnv): ResolvedMocchiConfig`
 - [ ] S2.6.3 — Ler `DATABASE_URL` do env com base em `database.sourceEnv`
 - [ ] S2.6.4 — Lançar erro descritivo se variável de ambiente não existir
 - [ ] S2.6.5 — Nunca logar o valor completo da `DATABASE_URL` (segurança — pode ter senha)
@@ -530,7 +530,7 @@
 ## T2.7 — Implementar API pública do pacote
 
 - [ ] S2.7.1 — Criar `packages/config/src/index.ts`
-- [ ] S2.7.2 — Exportar: `defineSandbaseConfig`, `SandbaseConfig`, `ResolvedSandbaseConfig`, `loadConfigFile`, `findConfigFile`, `validateConfig`, `resolveDefaults`, `ConfigValidationError`
+- [ ] S2.7.2 — Exportar: `defineMocchiConfig`, `MocchiConfig`, `ResolvedMocchiConfig`, `loadConfigFile`, `findConfigFile`, `validateConfig`, `resolveDefaults`, `ConfigValidationError`
 - [ ] S2.7.3 — Verificar que nenhum tipo interno vaza para a API pública
 
 ---
@@ -538,7 +538,7 @@
 ## T2.8 — Testes do pacote config
 
 - [ ] S2.8.1 — Criar `packages/config/src/__tests__/loader.test.ts`
-- [ ] S2.8.2 — Testar: encontra `sandbase.config.ts` no diretório atual
+- [ ] S2.8.2 — Testar: encontra `mocchi.config.ts` no diretório atual
 - [ ] S2.8.3 — Testar: retorna `null` quando arquivo não existe
 - [ ] S2.8.4 — Testar: lança erro com mensagem útil quando arquivo tem sintaxe inválida
 - [ ] S2.8.5 — Criar `packages/config/src/__tests__/validator.test.ts`
@@ -564,7 +564,7 @@
 
 ---
 
-# FASE 3 — Pacote `@sandbase/postgres` {#fase-3}
+# FASE 3 — Pacote `@mocchi/postgres` {#fase-3}
 
 **Objetivo:** Implementar todas as operações com PostgreSQL: conectar, criar banco, dropar banco, executar SQL, capturar SQLSTATE. Essa é a camada mais sensível do projeto.
 
@@ -762,13 +762,13 @@
 
 ## T3.12 — Testes do pacote postgres
 
-> Nota: testes desta fase podem exigir um PostgreSQL rodando localmente. Configurar com `SANDBASE_TEST_DATABASE_URL`.
+> Nota: testes desta fase podem exigir um PostgreSQL rodando localmente. Configurar com `MOCCHI_TEST_DATABASE_URL`.
 
 - [ ] S3.12.1 — Criar `packages/postgres/src/__tests__/url.test.ts` com testes de parsing
 - [ ] S3.12.2 — Criar `packages/postgres/src/__tests__/naming.test.ts` com testes das strategies
 - [ ] S3.12.3 — Criar `packages/postgres/src/__tests__/guards.test.ts` com testes das proteções
 - [ ] S3.12.4 — Criar `packages/postgres/src/__tests__/operations.integration.test.ts` (marcados como integration)
-- [ ] S3.12.5 — Configurar skip de integration tests quando `SANDBASE_TEST_DATABASE_URL` não está definida
+- [ ] S3.12.5 — Configurar skip de integration tests quando `MOCCHI_TEST_DATABASE_URL` não está definida
 - [ ] S3.12.6 — Testar criação e drop de database no integration test
 
 ---
@@ -783,9 +783,9 @@
 
 ---
 
-# FASE 4 — Pacote `@sandbase/docker` {#fase-4}
+# FASE 4 — Pacote `@mocchi/docker` {#fase-4}
 
-**Objetivo:** Implementar detecção e controle básico do Docker. Não é um wrapper completo — apenas o necessário para o Sandbase funcionar.
+**Objetivo:** Implementar detecção e controle básico do Docker. Não é um wrapper completo — apenas o necessário para o Mocchi funcionar.
 
 **Duração estimada:** 3–4 horas
 
@@ -900,7 +900,7 @@
 
 ---
 
-# FASE 5 — Pacote `@sandbase/core` {#fase-5}
+# FASE 5 — Pacote `@mocchi/core` {#fase-5}
 
 **Objetivo:** Implementar o orchestrador central. Core conecta todos os outros pacotes e define o lifecycle de um sandbox. Aqui ficam as abstrações de alto nível que a CLI vai usar.
 
@@ -923,14 +923,14 @@
 - [ ] S5.1.3 — Definir tipo `SandboxContext`:
   ```ts
   export type SandboxContext = {
-    config: ResolvedSandbaseConfig
+    config: ResolvedMocchiConfig
     sandbox: SandboxState
     baseUrl: string
   }
   ```
-- [ ] S5.1.4 — Definir tipo `SandbaseError` (classe base):
+- [ ] S5.1.4 — Definir tipo `MocchiError` (classe base):
   ```ts
-  export class SandbaseError extends Error {
+  export class MocchiError extends Error {
     readonly code: string
     readonly suggestions: string[]
     constructor(message: string, code: string, suggestions?: string[])
@@ -946,14 +946,14 @@
 - [ ] S5.2.2 — Implementar função `createSandbox(opts: CreateSandboxOptions): Promise<SandboxState>`:
   - Gerar nome via `generateSandboxName`
   - Validar guards (prefix, não-produção)
-  - Criar database via `@sandbase/postgres`
+  - Criar database via `@mocchi/postgres`
   - Retornar `SandboxState` com status `ready`
-- [ ] S5.2.3 — Implementar função `destroySandbox(sandbox: SandboxState, config: ResolvedSandbaseConfig): Promise<void>`:
+- [ ] S5.2.3 — Implementar função `destroySandbox(sandbox: SandboxState, config: ResolvedMocchiConfig): Promise<void>`:
   - Validar guards antes de dropar
-  - Dropar database via `@sandbase/postgres`
+  - Dropar database via `@mocchi/postgres`
   - Atualizar status para `destroyed`
-- [ ] S5.2.4 — Implementar função `sandboxExists(name: string, config: ResolvedSandbaseConfig): Promise<boolean>`
-- [ ] S5.2.5 — Implementar o registro de estado local (arquivo `.sandbase/state.json` no projeto):
+- [ ] S5.2.4 — Implementar função `sandboxExists(name: string, config: ResolvedMocchiConfig): Promise<boolean>`
+- [ ] S5.2.5 — Implementar o registro de estado local (arquivo `.mocchi/state.json` no projeto):
   - Gravar estado do sandbox atual
   - Ler estado ao reiniciar
   - Limpar estado ao destruir
@@ -963,8 +963,8 @@
 ## T5.3 — Implementar o state file
 
 - [ ] S5.3.1 — Criar `packages/core/src/state.ts`
-- [ ] S5.3.2 — Definir localização: `<projectRoot>/.sandbase/state.json`
-- [ ] S5.3.3 — Adicionar `.sandbase/` ao `.gitignore` da raiz do projeto do usuário (o `init` faz isso)
+- [ ] S5.3.2 — Definir localização: `<projectRoot>/.mocchi/state.json`
+- [ ] S5.3.3 — Adicionar `.mocchi/` ao `.gitignore` da raiz do projeto do usuário (o `init` faz isso)
 - [ ] S5.3.4 — Implementar `readState(projectRoot: string): Promise<SandboxState | null>`
 - [ ] S5.3.5 — Implementar `writeState(projectRoot: string, state: SandboxState): Promise<void>`
 - [ ] S5.3.6 — Implementar `clearState(projectRoot: string): Promise<void>`
@@ -1009,10 +1009,10 @@
 
 ---
 
-## T5.6 — Implementar o .env.sandbase writer
+## T5.6 — Implementar o .env.mocchi writer
 
 - [ ] S5.6.1 — Criar `packages/core/src/envfile.ts`
-- [ ] S5.6.2 — Implementar `writeEnvSandbase(opts: EnvFileOptions): Promise<string>`:
+- [ ] S5.6.2 — Implementar `writeEnvMocchi(opts: EnvFileOptions): Promise<string>`:
   ```ts
   type EnvFileOptions = {
     projectRoot: string
@@ -1020,10 +1020,10 @@
     sandboxName: string
   }
   ```
-- [ ] S5.6.3 — Escrever arquivo `.env.sandbase` na raiz do projeto
+- [ ] S5.6.3 — Escrever arquivo `.env.mocchi` na raiz do projeto
 - [ ] S5.6.4 — Incluir header com timestamp e nome do sandbox
-- [ ] S5.6.5 — Garantir que `.env.sandbase` está no `.gitignore`
-- [ ] S5.6.6 — Implementar `removeEnvSandbase(projectRoot: string): Promise<void>`
+- [ ] S5.6.5 — Garantir que `.env.mocchi` está no `.gitignore`
+- [ ] S5.6.6 — Implementar `removeEnvMocchi(projectRoot: string): Promise<void>`
 
 ---
 
@@ -1043,7 +1043,7 @@
     ready: boolean
   }
   ```
-- [ ] S5.7.3 — Implementar `runPreflight(config: ResolvedSandbaseConfig): Promise<PreflightResult>`
+- [ ] S5.7.3 — Implementar `runPreflight(config: ResolvedMocchiConfig): Promise<PreflightResult>`
 - [ ] S5.7.4 — Incluir checks: Docker instalado, Docker rodando, Compose disponível, compose file existe, service postgres detectado, conexão com postgres funciona, pode criar database
 - [ ] S5.7.5 — Cada check individual deve ser independente (não parar em caso de falha de outro)
 - [ ] S5.7.6 — `ready: false` se qualquer check for `fail`
@@ -1054,7 +1054,7 @@
 
 - [ ] S5.8.1 — Criar `packages/core/src/project.ts`
 - [ ] S5.8.2 — Implementar `detectProjectRoot(cwd: string): string`:
-  - Subir diretórios procurando por `package.json` ou `sandbase.config.ts`
+  - Subir diretórios procurando por `package.json` ou `mocchi.config.ts`
   - Retornar o diretório onde encontrou
 - [ ] S5.8.3 — Implementar `detectPackageJson(cwd: string): PackageJsonInfo | null`:
   - Ler e parsear `package.json`
@@ -1063,7 +1063,7 @@
   - Verificar existência de `.env`, `.env.local`, `.env.development`
   - Listar arquivos encontrados
 - [ ] S5.8.5 — Implementar `detectComposeFile(cwd: string): string | null`:
-  - Delegar para `@sandbase/docker`
+  - Delegar para `@mocchi/docker`
 
 ---
 
@@ -1083,7 +1083,7 @@
 ## T5.10 — API pública do pacote core
 
 - [ ] S5.10.1 — Criar `packages/core/src/index.ts`
-- [ ] S5.10.2 — Exportar: `createSandbox`, `destroySandbox`, `runMigrations`, `runSeed`, `runPreflight`, `writeEnvSandbase`, tipos principais, classes de erro
+- [ ] S5.10.2 — Exportar: `createSandbox`, `destroySandbox`, `runMigrations`, `runSeed`, `runPreflight`, `writeEnvMocchi`, tipos principais, classes de erro
 
 ---
 
@@ -1106,7 +1106,7 @@
 
 ---
 
-# FASE 6 — Pacote `@sandbase/cli` — Scaffold {#fase-6}
+# FASE 6 — Pacote `@mocchi/cli` — Scaffold {#fase-6}
 
 **Objetivo:** Criar o scaffold da CLI: entry point, parser de argumentos, sistema de output e estrutura de comandos. Sem implementar comandos ainda — apenas a estrutura.
 
@@ -1136,7 +1136,7 @@
   ```json
   {
     "bin": {
-      "sandbase": "./dist/bin.js"
+      "mocchi": "./dist/bin.js"
     }
   }
   ```
@@ -1164,14 +1164,14 @@
 - [ ] S6.3.3 — Implementar suporte a `--no-color` e `NO_COLOR` env var
 - [ ] S6.3.4 — Implementar `createSpinner(text: string)` wrapper em cima de `ora`
 - [ ] S6.3.5 — Implementar `printSandboxInfo(sandbox: SandboxState): void` — output padronizado
-- [ ] S6.3.6 — Implementar `printError(error: SandbaseError): void` — output com suggestions
+- [ ] S6.3.6 — Implementar `printError(error: MocchiError): void` — output com suggestions
 
 ---
 
 ## T6.4 — Criar o programa principal com Commander
 
 - [ ] S6.4.1 — Criar `packages/cli/src/program.ts`
-- [ ] S6.4.2 — Criar instância do Commander com nome `sandbase`
+- [ ] S6.4.2 — Criar instância do Commander com nome `mocchi`
 - [ ] S6.4.3 — Configurar versão (ler de `package.json`)
 - [ ] S6.4.4 — Configurar descrição: `Disposable PostgreSQL sandboxes for dangerous migrations, queries and integration tests.`
 - [ ] S6.4.5 — Adicionar opção global `--verbose, -v` para output detalhado
@@ -1204,7 +1204,7 @@
 - [ ] S6.6.2 — Implementar `loadCliContext(opts: CliContextOptions): Promise<CliContext>`:
   - Resolver `cwd` (da opção global ou `process.cwd()`)
   - Detectar `projectRoot`
-  - Carregar `sandbase.config.ts`
+  - Carregar `mocchi.config.ts`
   - Resolver defaults
   - Resolver env vars
   - Retornar contexto completo
@@ -1212,10 +1212,10 @@
 
 ---
 
-## T6.7 — Implementar `sandbase --help` e `sandbase --version`
+## T6.7 — Implementar `mocchi --help` e `mocchi --version`
 
 - [ ] S6.7.1 — Verificar que `--help` mostra todos os comandos
-- [ ] S6.7.2 — Verificar que `--version` mostra versão do `@sandbase/cli`
+- [ ] S6.7.2 — Verificar que `--version` mostra versão do `@mocchi/cli`
 - [ ] S6.7.3 — Customizar formato do help para incluir exemplos de uso
 - [ ] S6.7.4 — Adicionar `--help` para cada subcomando (Commander faz isso automaticamente)
 
@@ -1225,8 +1225,8 @@
 
 - [ ] S6.8.1 — Rodar `pnpm build` no pacote cli
 - [ ] S6.8.2 — Rodar `pnpm link --global` no pacote cli
-- [ ] S6.8.3 — Verificar que `sandbase --version` funciona no terminal
-- [ ] S6.8.4 — Verificar que `sandbase --help` mostra os comandos
+- [ ] S6.8.3 — Verificar que `mocchi --version` funciona no terminal
+- [ ] S6.8.4 — Verificar que `mocchi --help` mostra os comandos
 
 ---
 
@@ -1239,7 +1239,7 @@
 
 ---
 
-# FASE 7 — Comando `sandbase doctor` {#fase-7}
+# FASE 7 — Comando `mocchi doctor` {#fase-7}
 
 **Objetivo:** Implementar o diagnóstico completo do ambiente. É o primeiro comando real e serve como smoke test de toda a integração.
 
@@ -1253,7 +1253,7 @@
 - [ ] S7.1.2 — Implementar `runDoctor(opts: DoctorOptions): Promise<DoctorResult>`:
   - Usar `runPreflight` já implementado no Core
   - Adicionar checks adicionais: arquivo config existe, migrations command configurado
-- [ ] S7.1.3 — Organizar checks em grupos: `Docker`, `PostgreSQL`, `Sandbase`
+- [ ] S7.1.3 — Organizar checks em grupos: `Docker`, `PostgreSQL`, `Mocchi`
 - [ ] S7.1.4 — Implementar `DoctorResult` com summary de aprovados/reprovados
 
 ---
@@ -1267,7 +1267,7 @@
   - Iterar sobre checks e usar `output.success`/`output.failure`/`output.warn`
 - [ ] S7.2.3 — Implementar output exato do PRD:
   ```
-  Sandbase Doctor
+  Mocchi Doctor
 
   [PASS] Docker is installed
   [PASS] Docker daemon is running
@@ -1281,24 +1281,24 @@
 
 ## T7.3 — Testar o comando doctor manualmente
 
-- [ ] S7.3.1 — Rodar `sandbase doctor` com Docker rodando
-- [ ] S7.3.2 — Rodar `sandbase doctor` sem Docker (deve mostrar falha)
-- [ ] S7.3.3 — Rodar `sandbase doctor` sem config (deve mostrar aviso de config)
+- [ ] S7.3.1 — Rodar `mocchi doctor` com Docker rodando
+- [ ] S7.3.2 — Rodar `mocchi doctor` sem Docker (deve mostrar falha)
+- [ ] S7.3.3 — Rodar `mocchi doctor` sem config (deve mostrar aviso de config)
 - [ ] S7.3.4 — Verificar exit codes corretos
 
 ---
 
 ## T7.4 — Commit do comando doctor
 
-- [ ] S7.4.1 — Commit: `feat(cli): implement sandbase doctor command`
+- [ ] S7.4.1 — Commit: `feat(cli): implement mocchi doctor command`
 
 ---
 
 ---
 
-# FASE 8 — Comando `sandbase init` {#fase-8}
+# FASE 8 — Comando `mocchi init` {#fase-8}
 
-**Objetivo:** Implementar o `sandbase init` que detecta o projeto e gera `sandbase.config.ts`.
+**Objetivo:** Implementar o `mocchi init` que detecta o projeto e gera `mocchi.config.ts`.
 
 **Duração estimada:** 3–4 horas
 
@@ -1314,7 +1314,7 @@
 
 ---
 
-## T8.2 — Implementar gerador de sandbase.config.ts
+## T8.2 — Implementar gerador de mocchi.config.ts
 
 - [ ] S8.2.1 — Criar `packages/core/src/init.ts`
 - [ ] S8.2.2 — Implementar `generateConfigFile(opts: InitOptions): string`:
@@ -1324,10 +1324,10 @@
 - [ ] S8.2.4 — Usar `ormInfo.migrateCommand` se ORM detectado, senão placeholder `'<your-migration-command>'`
 - [ ] S8.2.5 — Usar `composeFile` e `postgresService` detectados
 - [ ] S8.2.6 — Implementar `runInit(cwd: string): Promise<InitResult>`:
-  - Verificar se `sandbase.config.ts` já existe (pedir confirmação para sobrescrever)
+  - Verificar se `mocchi.config.ts` já existe (pedir confirmação para sobrescrever)
   - Detectar tudo automaticamente
   - Gerar arquivo
-  - Criar pasta `sandbase/scenarios/`
+  - Criar pasta `mocchi/scenarios/`
   - Criar `.gitignore` se não existir ou adicionar entradas necessárias
 
 ---
@@ -1338,12 +1338,12 @@
 - [ ] S8.3.2 — Exibir cada detecção com ✓ ou ✗
 - [ ] S8.3.3 — Exibir mensagem final com próximos passos:
   ```
-  ✓ sandbase.config.ts created
+  ✓ mocchi.config.ts created
   
   Next steps:
-    1. Edit sandbase.config.ts and set your migrations command
-    2. Run: sandbase doctor
-    3. Run: sandbase ready
+    1. Edit mocchi.config.ts and set your migrations command
+    2. Run: mocchi doctor
+    3. Run: mocchi ready
   ```
 - [ ] S8.3.4 — Implementar `--force` para sobrescrever config existente sem perguntar
 - [ ] S8.3.5 — Tratar caso onde config já existe: pedir confirmação interativa
@@ -1352,24 +1352,24 @@
 
 ## T8.4 — Testar o comando init manualmente
 
-- [ ] S8.4.1 — Rodar `sandbase init` em um projeto Node.js com Prisma
-- [ ] S8.4.2 — Rodar `sandbase init` em projeto sem ORM reconhecido
-- [ ] S8.4.3 — Rodar `sandbase init` duas vezes (deve pedir confirmação)
+- [ ] S8.4.1 — Rodar `mocchi init` em um projeto Node.js com Prisma
+- [ ] S8.4.2 — Rodar `mocchi init` em projeto sem ORM reconhecido
+- [ ] S8.4.3 — Rodar `mocchi init` duas vezes (deve pedir confirmação)
 - [ ] S8.4.4 — Verificar conteúdo do arquivo gerado
 
 ---
 
 ## T8.5 — Commit do comando init
 
-- [ ] S8.5.1 — Commit: `feat(cli): implement sandbase init command`
+- [ ] S8.5.1 — Commit: `feat(cli): implement mocchi init command`
 
 ---
 
 ---
 
-# FASE 9 — Comando `sandbase ready` {#fase-9}
+# FASE 9 — Comando `mocchi ready` {#fase-9}
 
-**Objetivo:** Implementar o comando principal de day-to-day. `sandbase ready` deve criar um sandbox completo e deixar o dev pronto para trabalhar.
+**Objetivo:** Implementar o comando principal de day-to-day. `mocchi ready` deve criar um sandbox completo e deixar o dev pronto para trabalhar.
 
 **Duração estimada:** 4–5 horas
 
@@ -1381,7 +1381,7 @@
 - [ ] S9.1.2 — Implementar `runReady(opts: ReadyOptions): Promise<ReadyResult>`:
   ```ts
   type ReadyOptions = {
-    config: ResolvedSandbaseConfig
+    config: ResolvedMocchiConfig
     projectRoot: string
     name?: string        // --name flag
     skipMigrations?: boolean
@@ -1404,7 +1404,7 @@
 - [ ] S9.1.8 — Passo 6: Registrar signal handlers para cleanup
 - [ ] S9.1.9 — Passo 7: Rodar migrations
 - [ ] S9.1.10 — Passo 8: Rodar seed (se configurada e não `skipSeed`)
-- [ ] S9.1.11 — Passo 9: Escrever `.env.sandbase`
+- [ ] S9.1.11 — Passo 9: Escrever `.env.mocchi`
 - [ ] S9.1.12 — Passo 10: Salvar state file
 
 ---
@@ -1422,7 +1422,7 @@
   ✓ Created database sbx_fix_audit_logs_3841
   ✓ Applied migrations (2.3s)
   ✓ Seed skipped (optional)
-  ✓ Generated .env.sandbase
+  ✓ Generated .env.mocchi
   
   DATABASE_URL=postgres://...
   ```
@@ -1434,24 +1434,24 @@
 
 ## T9.3 — Testar o comando ready manualmente
 
-- [ ] S9.3.1 — Rodar `sandbase ready` com Docker e Postgres rodando
+- [ ] S9.3.1 — Rodar `mocchi ready` com Docker e Postgres rodando
 - [ ] S9.3.2 — Verificar criação do banco no psql/DBeaver
-- [ ] S9.3.3 — Verificar conteúdo do `.env.sandbase`
-- [ ] S9.3.4 — Rodar `sandbase ready` uma segunda vez (deve reutilizar sandbox existente)
-- [ ] S9.3.5 — Rodar `sandbase ready --name my-test`
+- [ ] S9.3.3 — Verificar conteúdo do `.env.mocchi`
+- [ ] S9.3.4 — Rodar `mocchi ready` uma segunda vez (deve reutilizar sandbox existente)
+- [ ] S9.3.5 — Rodar `mocchi ready --name my-test`
 - [ ] S9.3.6 — Simular falha de migrations e verificar output
 
 ---
 
 ## T9.4 — Commit do comando ready
 
-- [ ] S9.4.1 — Commit: `feat(cli): implement sandbase ready command`
+- [ ] S9.4.1 — Commit: `feat(cli): implement mocchi ready command`
 
 ---
 
 ---
 
-# FASE 10 — Comando `sandbase down` {#fase-10}
+# FASE 10 — Comando `mocchi down` {#fase-10}
 
 **Objetivo:** Implementar o comando de cleanup. Deve ser seguro, preciso e verificável.
 
@@ -1467,7 +1467,7 @@
   - Se não existir state, verificar se há banco com o prefixo no cluster
   - Destruir sandbox com todas as proteções de segurança
   - Remover state file
-  - Remover `.env.sandbase`
+  - Remover `.env.mocchi`
 - [ ] S10.1.3 — Implementar `--force` para pular confirmação interativa
 - [ ] S10.1.4 — Implementar `--database <name>` para especificar banco explícito
 - [ ] S10.1.5 — Listar bancos com prefixo `sbx_` se `--database` não for fornecido e houver múltiplos
@@ -1480,7 +1480,7 @@
 - [ ] S10.2.2 — Output:
   ```
   ✓ Dropped database sbx_fix_audit_logs_3841
-  ✓ Removed .env.sandbase
+  ✓ Removed .env.mocchi
   ```
 - [ ] S10.2.3 — Implementar confirmação interativa quando `--force` não está presente e operação é destrutiva
 - [ ] S10.2.4 — Mostrar claramente qual database vai ser dropada antes de dropar
@@ -1489,24 +1489,24 @@
 
 ## T10.3 — Testar o comando down manualmente
 
-- [ ] S10.3.1 — Rodar `sandbase ready` e depois `sandbase down`
+- [ ] S10.3.1 — Rodar `mocchi ready` e depois `mocchi down`
 - [ ] S10.3.2 — Verificar que banco não existe mais
-- [ ] S10.3.3 — Verificar que `.env.sandbase` foi removido
-- [ ] S10.3.4 — Tentar `sandbase down` sem sandbox existente (deve falhar graciosamente)
+- [ ] S10.3.3 — Verificar que `.env.mocchi` foi removido
+- [ ] S10.3.4 — Tentar `mocchi down` sem sandbox existente (deve falhar graciosamente)
 
 ---
 
 ## T10.4 — Commit do comando down
 
-- [ ] S10.4.1 — Commit: `feat(cli): implement sandbase down command`
+- [ ] S10.4.1 — Commit: `feat(cli): implement mocchi down command`
 
 ---
 
 ---
 
-# FASE 11 — Comando `sandbase run` {#fase-11}
+# FASE 11 — Comando `mocchi run` {#fase-11}
 
-**Objetivo:** Implementar o comando mais crítico para CI. `sandbase run` deve criar sandbox, injetar env, executar comando e propagar exit code corretamente.
+**Objetivo:** Implementar o comando mais crítico para CI. `mocchi run` deve criar sandbox, injetar env, executar comando e propagar exit code corretamente.
 
 **Duração estimada:** 4–5 horas
 
@@ -1518,7 +1518,7 @@
 - [ ] S11.1.2 — Implementar `runCommand(opts: RunOptions): Promise<RunResult>`:
   ```ts
   type RunOptions = {
-    config: ResolvedSandbaseConfig
+    config: ResolvedMocchiConfig
     projectRoot: string
     command: string[]       // os args depois do '--'
     keep?: boolean          // --keep
@@ -1555,7 +1555,7 @@
 - [ ] S11.2.6 — Adicionar opção `--skip-migrations`
 - [ ] S11.2.7 — Output inicial:
   ```
-  Sandbase Run
+  Mocchi Run
   
   Sandbox: sbx_main_4421
   Command: yarn test:e2e
@@ -1565,13 +1565,13 @@
 - [ ] S11.2.8 — Durante execução do comando: mostrar apenas o output do próprio comando
 - [ ] S11.2.9 — Output final (em caso de sucesso):
   ```
-  Sandbase: command exited with code 0 (12.3s)
-  Sandbase: sandbox destroyed
+  Mocchi: command exited with code 0 (12.3s)
+  Mocchi: sandbox destroyed
   ```
 - [ ] S11.2.10 — Output final (em caso de falha):
   ```
-  Sandbase: command exited with code 1
-  Sandbase: sandbox kept for inspection: DATABASE_URL=...
+  Mocchi: command exited with code 1
+  Mocchi: sandbox kept for inspection: DATABASE_URL=...
   ```
 - [ ] S11.2.11 — CRÍTICO: `process.exit(result.exitCode)` ao final
 
@@ -1579,23 +1579,23 @@
 
 ## T11.3 — Testar o comando run manualmente
 
-- [ ] S11.3.1 — Rodar `sandbase run -- echo "hello"` (deve passar)
-- [ ] S11.3.2 — Rodar `sandbase run -- exit 1` (deve falhar com exit code 1)
-- [ ] S11.3.3 — Verificar que exit code é propagado: `sandbase run -- exit 42; echo $?`
-- [ ] S11.3.4 — Rodar `sandbase run --keep -- sleep 5` e fazer Ctrl+C — verificar cleanup
+- [ ] S11.3.1 — Rodar `mocchi run -- echo "hello"` (deve passar)
+- [ ] S11.3.2 — Rodar `mocchi run -- exit 1` (deve falhar com exit code 1)
+- [ ] S11.3.3 — Verificar que exit code é propagado: `mocchi run -- exit 42; echo $?`
+- [ ] S11.3.4 — Rodar `mocchi run --keep -- sleep 5` e fazer Ctrl+C — verificar cleanup
 - [ ] S11.3.5 — Rodar sem `--` (deve dar erro amigável)
 
 ---
 
 ## T11.4 — Commit do comando run
 
-- [ ] S11.4.1 — Commit: `feat(cli): implement sandbase run command with exit code propagation`
+- [ ] S11.4.1 — Commit: `feat(cli): implement mocchi run command with exit code propagation`
 
 ---
 
 ---
 
-# FASE 12 — Comando `sandbase reset` {#fase-12}
+# FASE 12 — Comando `mocchi reset` {#fase-12}
 
 **Objetivo:** Implementar reset — destruir e recriar o sandbox atual.
 
@@ -1621,13 +1621,13 @@
 
 ## T12.3 — Commit do comando reset
 
-- [ ] S12.3.1 — Commit: `feat(cli): implement sandbase reset command`
+- [ ] S12.3.1 — Commit: `feat(cli): implement mocchi reset command`
 
 ---
 
 ---
 
-# FASE 13 — Comando `sandbase shell` {#fase-13}
+# FASE 13 — Comando `mocchi shell` {#fase-13}
 
 **Objetivo:** Abrir shell psql no sandbox atual.
 
@@ -1655,7 +1655,7 @@
 
 ## T13.3 — Commit do comando shell
 
-- [ ] S13.3.1 — Commit: `feat(cli): implement sandbase shell command`
+- [ ] S13.3.1 — Commit: `feat(cli): implement mocchi shell command`
 
 ---
 
@@ -1698,7 +1698,7 @@
 - [ ] S14.2.3 — Verificar que prefixo `sbx_` é verificado antes de qualquer drop
 - [ ] S14.2.4 — Verificar que senha não aparece em nenhum log
 - [ ] S14.2.5 — Verificar que DATABASE_URL original nunca é usado como sandbox
-- [ ] S14.2.6 — Testar: tentar `sandbase down` com `NODE_ENV=production` → deve bloquear
+- [ ] S14.2.6 — Testar: tentar `mocchi down` com `NODE_ENV=production` → deve bloquear
 
 ---
 
@@ -1732,16 +1732,16 @@
 ## T14.5 — Publicação no npm
 
 - [ ] S14.5.1 — Criar conta no npmjs.com se não tiver
-- [ ] S14.5.2 — Configurar organização `@sandbase` no npm
+- [ ] S14.5.2 — Configurar organização `@mocchi` no npm
 - [ ] S14.5.3 — Verificar `package.json` de cada pacote: `name`, `version`, `description`, `keywords`, `author`, `license`, `repository`, `homepage`
 - [ ] S14.5.4 — Configurar `files` no `package.json` para publicar apenas `dist/` e `README.md`
 - [ ] S14.5.5 — Rodar `pnpm publish --dry-run` para verificar o que vai ser publicado
-- [ ] S14.5.6 — Publicar `@sandbase/config` → npm
-- [ ] S14.5.7 — Publicar `@sandbase/postgres` → npm
-- [ ] S14.5.8 — Publicar `@sandbase/docker` → npm
-- [ ] S14.5.9 — Publicar `@sandbase/core` → npm
-- [ ] S14.5.10 — Publicar `@sandbase/cli` → npm
-- [ ] S14.5.11 — Verificar: `npx @sandbase/cli --version` em um diretório vazio
+- [ ] S14.5.6 — Publicar `@mocchi/config` → npm
+- [ ] S14.5.7 — Publicar `@mocchi/postgres` → npm
+- [ ] S14.5.8 — Publicar `@mocchi/docker` → npm
+- [ ] S14.5.9 — Publicar `@mocchi/core` → npm
+- [ ] S14.5.10 — Publicar `@mocchi/cli` → npm
+- [ ] S14.5.11 — Verificar: `npx @mocchi/cli --version` em um diretório vazio
 
 ---
 
@@ -1756,7 +1756,7 @@
 
 ---
 
-# FASE 15 — Comando `sandbase sql` {#fase-15}
+# FASE 15 — Comando `mocchi sql` {#fase-15}
 
 **Objetivo:** Implementar execução de SQL com validação de erro esperado vs real.
 
@@ -1770,7 +1770,7 @@
 - [ ] S15.1.2 — Implementar `runSql(opts: SqlOptions): Promise<SqlResult>`:
   ```ts
   type SqlOptions = {
-    config: ResolvedSandbaseConfig
+    config: ResolvedMocchiConfig
     projectRoot: string
     input: string        // caminho de arquivo ou query inline
     expectError?: string // SQLSTATE code
@@ -1787,7 +1787,7 @@
   ```
 - [ ] S15.1.3 — Resolver `input`: se parece caminho de arquivo, ler o arquivo; senão, usar como SQL inline
 - [ ] S15.1.4 — Criar sandbox (ou reutilizar se `reuseExisting`)
-- [ ] S15.1.5 — Executar SQL usando `@sandbase/postgres`
+- [ ] S15.1.5 — Executar SQL usando `@mocchi/postgres`
 - [ ] S15.1.6 — Implementar lógica de validação:
   - `--expect-error <code>`: PASS se query falhou com esse SQLSTATE exato
   - `--expect-success`: PASS se query teve sucesso
@@ -1823,8 +1823,8 @@
 
 ## T15.3 — Testar o comando sql manualmente
 
-- [ ] S15.3.1 — Testar `sandbase sql "SELECT 1;"` (deve passar)
-- [ ] S15.3.2 — Testar `sandbase sql "SELECT 1;" --expect-success` (deve passar)
+- [ ] S15.3.1 — Testar `mocchi sql "SELECT 1;"` (deve passar)
+- [ ] S15.3.2 — Testar `mocchi sql "SELECT 1;" --expect-success` (deve passar)
 - [ ] S15.3.3 — Testar com query que falha e `--expect-error <code>` (deve passar)
 - [ ] S15.3.4 — Testar com query que falha sem `--expect-error` (deve falhar)
 - [ ] S15.3.5 — Testar com arquivo SQL
@@ -1833,7 +1833,7 @@
 
 ## T15.4 — Commit do comando sql
 
-- [ ] S15.4.1 — Commit: `feat(cli): implement sandbase sql command with error assertions`
+- [ ] S15.4.1 — Commit: `feat(cli): implement mocchi sql command with error assertions`
 
 ---
 
@@ -1881,8 +1881,8 @@
 
 - [ ] S16.2.1 — Criar `packages/core/src/scenarios/define.ts`
 - [ ] S16.2.2 — Implementar `defineScenario(scenario: Scenario): Scenario`:
-  - Apenas retorna o objeto (type safety helper, igual ao `defineSandbaseConfig`)
-- [ ] S16.2.3 — Exportar de `@sandbase/core`
+  - Apenas retorna o objeto (type safety helper, igual ao `defineMocchiConfig`)
+- [ ] S16.2.3 — Exportar de `@mocchi/core`
 
 ---
 
@@ -1890,15 +1890,15 @@
 
 - [ ] S16.3.1 — Criar `packages/core/src/scenarios/loader.ts`
 - [ ] S16.3.2 — Implementar `findScenarioFile(name: string, projectRoot: string): string | null`:
-  - Procurar em `sandbase/scenarios/<name>.ts`
-  - Procurar em `sandbase/scenarios/<name>/index.ts`
+  - Procurar em `mocchi/scenarios/<name>.ts`
+  - Procurar em `mocchi/scenarios/<name>/index.ts`
   - Suportar extensões `.ts`, `.js`
 - [ ] S16.3.3 — Implementar `loadScenario(filePath: string): Promise<Scenario>`:
   - Usar `jiti` para carregar o arquivo
   - Validar que o export default é um objeto com `name` e `assertions`
   - Lançar erro descritivo se formato inválido
 - [ ] S16.3.4 — Implementar `listAvailableScenarios(projectRoot: string): string[]`:
-  - Listar arquivos `.ts` em `sandbase/scenarios/`
+  - Listar arquivos `.ts` em `mocchi/scenarios/`
 
 ---
 
@@ -1947,7 +1947,7 @@
   - Mostrar sandbox info
   - Mostrar cada assertion com expected vs received
   - Mostrar summary: `N passed, M failed`
-  - Se falhou: mostrar DATABASE_URL para inspeção e comando `sandbase shell`
+  - Se falhou: mostrar DATABASE_URL para inspeção e comando `mocchi shell`
 
 ---
 
@@ -1969,7 +1969,7 @@
 
 ---
 
-# FASE 17 — Comando `sandbase verify` {#fase-17}
+# FASE 17 — Comando `mocchi verify` {#fase-17}
 
 **Objetivo:** Implementar o comando `verify` que executa um scenario declarativo.
 
@@ -1990,7 +1990,7 @@
 ## T17.2 — Implementar comando verify na CLI
 
 - [ ] S17.2.1 — Implementar handler do Commander
-- [ ] S17.2.2 — Aceitar nome do scenario como argumento posicional: `sandbase verify <name>`
+- [ ] S17.2.2 — Aceitar nome do scenario como argumento posicional: `mocchi verify <name>`
 - [ ] S17.2.3 — Adicionar opção `--keep` para preservar sandbox após falha
 - [ ] S17.2.4 — Adicionar opção `--list` para listar scenarios disponíveis
 - [ ] S17.2.5 — Usar `formatScenarioReport` para exibir output exato do PRD
@@ -2008,15 +2008,15 @@
 ## T17.4 — Testar o comando verify manualmente
 
 - [ ] S17.4.1 — Criar scenario simples de teste
-- [ ] S17.4.2 — Rodar `sandbase verify <nome>` e verificar output
+- [ ] S17.4.2 — Rodar `mocchi verify <nome>` e verificar output
 - [ ] S17.4.3 — Testar com scenario que falha (assertion não satisfeita)
-- [ ] S17.4.4 — Testar `sandbase verify --list`
+- [ ] S17.4.4 — Testar `mocchi verify --list`
 
 ---
 
 ## T17.5 — Commit do comando verify
 
-- [ ] S17.5.1 — Commit: `feat(cli): implement sandbase verify command`
+- [ ] S17.5.1 — Commit: `feat(cli): implement mocchi verify command`
 
 ---
 
@@ -2046,14 +2046,14 @@
 - [ ] S18.2.2 — Verificar que sandbox info aparece no início
 - [ ] S18.2.3 — Verificar que cada assertion mostra expected vs received
 - [ ] S18.2.4 — Verificar que summary final está correto
-- [ ] S18.2.5 — Verificar que em caso de falha, DATABASE_URL e comando `sandbase shell` aparecem
+- [ ] S18.2.5 — Verificar que em caso de falha, DATABASE_URL e comando `mocchi shell` aparecem
 
 ---
 
 ## T18.3 — Documentação da v0.2
 
-- [ ] S18.3.1 — Adicionar seção `sandbase sql` ao `README.md`
-- [ ] S18.3.2 — Adicionar seção `sandbase verify` ao `README.md`
+- [ ] S18.3.1 — Adicionar seção `mocchi sql` ao `README.md`
+- [ ] S18.3.2 — Adicionar seção `mocchi verify` ao `README.md`
 - [ ] S18.3.3 — Criar `docs/SCENARIOS.md` com guia completo de scenarios
 - [ ] S18.3.4 — Documentar todos os campos de `defineScenario`
 - [ ] S18.3.5 — Criar scenario de exemplo funcional com comentários
@@ -2072,7 +2072,7 @@
 
 ---
 
-# FASE 19 — Comando `sandbase migrate:test` {#fase-19}
+# FASE 19 — Comando `mocchi migrate:test` {#fase-19}
 
 **Objetivo:** Implementar o teste de migrations: aplicar em sandbox, medir tempo, validar sucesso ou falha esperada.
 
@@ -2086,7 +2086,7 @@
 - [ ] S19.1.2 — Implementar `runMigrateTest(opts: MigrateTestOptions): Promise<MigrateTestResult>`:
   ```ts
   type MigrateTestOptions = {
-    config: ResolvedSandbaseConfig
+    config: ResolvedMocchiConfig
     projectRoot: string
     expectFailure?: boolean
     expectError?: string  // SQLSTATE
@@ -2146,13 +2146,13 @@
 
 ## T19.5 — Commit do comando migrate:test
 
-- [ ] S19.5.1 — Commit: `feat(cli): implement sandbase migrate:test command`
+- [ ] S19.5.1 — Commit: `feat(cli): implement mocchi migrate:test command`
 
 ---
 
 ---
 
-# FASE 20 — Comando `sandbase migrate:report` {#fase-20}
+# FASE 20 — Comando `mocchi migrate:report` {#fase-20}
 
 **Objetivo:** Gerar relatório de migration em Markdown, útil para PRs.
 
@@ -2178,7 +2178,7 @@
 - [ ] S20.2.2 — Implementar `formatMigrateReport(report: MigrateReport): string`
 - [ ] S20.2.3 — Formato do relatório:
   ```md
-  # Sandbase Migration Report
+  # Mocchi Migration Report
   
   **Date:** 2026-05-29 23:59:00
   **Project:** my-project
@@ -2210,7 +2210,7 @@
 
 ## T20.4 — Commit do comando migrate:report
 
-- [ ] S20.4.1 — Commit: `feat(cli): implement sandbase migrate:report command`
+- [ ] S20.4.1 — Commit: `feat(cli): implement mocchi migrate:report command`
 
 ---
 
@@ -2298,15 +2298,15 @@
 ## T22.4 — Adicionar opção de cache na configuração
 
 - [ ] S22.4.1 — Adicionar `cache?: { enabled: boolean; migrationsDir?: string }` ao `SandboxConfig`
-- [ ] S22.4.2 — Atualizar `defineSandbaseConfig` tipos
+- [ ] S22.4.2 — Atualizar `defineMocchiConfig` tipos
 - [ ] S22.4.3 — Atualizar validador de config
 
 ---
 
 ## T22.5 — Testar o template cache
 
-- [ ] S22.5.1 — Testar: primeiro `sandbase ready` cria template e sandbox
-- [ ] S22.5.2 — Testar: segundo `sandbase ready` usa template existente (muito mais rápido)
+- [ ] S22.5.1 — Testar: primeiro `mocchi ready` cria template e sandbox
+- [ ] S22.5.2 — Testar: segundo `mocchi ready` usa template existente (muito mais rápido)
 - [ ] S22.5.3 — Testar: após mudar migration, template é recriado
 - [ ] S22.5.4 — Medir e comparar tempo com/sem cache
 
@@ -2350,11 +2350,11 @@
 
 ---
 
-## T23.3 — Comando `sandbase warm` (novo comando)
+## T23.3 — Comando `mocchi warm` (novo comando)
 
 - [ ] S23.3.1 — Implementar `packages/cli/src/commands/warm.ts`
-- [ ] S23.3.2 — `sandbase warm` — cria template + sandbox pronto para reuso
-- [ ] S23.3.3 — `sandbase warm --template-only` — apenas cria o template
+- [ ] S23.3.2 — `mocchi warm` — cria template + sandbox pronto para reuso
+- [ ] S23.3.3 — `mocchi warm --template-only` — apenas cria o template
 
 ---
 
@@ -2377,9 +2377,9 @@
 ## T24.1 — Benchmarks
 
 - [ ] S24.1.1 — Criar script de benchmark: `pnpm bench`
-- [ ] S24.1.2 — Medir tempo de `sandbase ready` sem cache
-- [ ] S24.1.3 — Medir tempo de `sandbase ready` com template cache
-- [ ] S24.1.4 — Medir tempo de `sandbase ready` com sandbox reuse
+- [ ] S24.1.2 — Medir tempo de `mocchi ready` sem cache
+- [ ] S24.1.3 — Medir tempo de `mocchi ready` com template cache
+- [ ] S24.1.4 — Medir tempo de `mocchi ready` com sandbox reuse
 - [ ] S24.1.5 — Documentar resultados em `docs/PERFORMANCE.md`
 
 ---
@@ -2422,9 +2422,9 @@
 - [ ] S25.2.1 — Criar `packages/cli/src/output-ci.ts`
 - [ ] S25.2.2 — Implementar output compacto sem spinners, sem cores, com timestamps:
   ```
-  [2026-05-29T23:59:00Z] sandbase: creating sandbox sbx_main_4421
-  [2026-05-29T23:59:01Z] sandbase: running migrations
-  [2026-05-29T23:59:03Z] sandbase: sandbox ready
+  [2026-05-29T23:59:00Z] mocchi: creating sandbox sbx_main_4421
+  [2026-05-29T23:59:01Z] mocchi: running migrations
+  [2026-05-29T23:59:03Z] mocchi: sandbox ready
   ```
 - [ ] S25.2.3 — Ativar automaticamente quando `isCiEnvironment()` for true
 - [ ] S25.2.4 — Ativar com flag `--ci`
@@ -2441,7 +2441,7 @@
 
 ## T25.4 — Implementar config por ambiente
 
-- [ ] S25.4.1 — Suportar `sandbase.config.ci.ts` como config específica para CI
+- [ ] S25.4.1 — Suportar `mocchi.config.ci.ts` como config específica para CI
 - [ ] S25.4.2 — Mesclar config base com config CI quando em ambiente CI
 - [ ] S25.4.3 — Documentar campos que mudam tipicamente em CI: cleanup, timeout, cache
 
@@ -2449,7 +2449,7 @@
 
 ## T25.5 — Implementar GitHub Actions workflow de exemplo
 
-- [ ] S25.5.1 — Criar `examples/github-actions/test-with-sandbase.yml`:
+- [ ] S25.5.1 — Criar `examples/github-actions/test-with-mocchi.yml`:
   ```yaml
   name: Tests
   on: [push]
@@ -2466,7 +2466,7 @@
       steps:
         - uses: actions/checkout@v4
         - run: npm ci
-        - run: npx sandbase run -- npm test
+        - run: npx mocchi run -- npm test
           env:
             DATABASE_URL: postgres://postgres:postgres@localhost:5432/mydb
   ```
@@ -2475,7 +2475,7 @@
 
 ## T25.6 — Testar em ambiente CI real
 
-- [ ] S25.6.1 — Criar GitHub Actions workflow que usa `sandbase run` nos próprios testes do Sandbase
+- [ ] S25.6.1 — Criar GitHub Actions workflow que usa `mocchi run` nos próprios testes do Mocchi
 - [ ] S25.6.2 — Verificar que exit codes são propagados corretamente no CI
 - [ ] S25.6.3 — Verificar que output compacto funciona no GitHub Actions log
 
@@ -2542,8 +2542,8 @@
 ## T27.1 — Criar site de documentação
 
 - [ ] S27.1.1 — Escolher ferramenta: Nextra (Next.js) ou VitePress ou Docusaurus
-- [ ] S27.1.2 — Criar repositório separado `sandbase-docs` ou pasta `docs-site/` no monorepo
-- [ ] S27.1.3 — Configurar domínio: `sandbase.dev` ou `docs.sandbase.dev` (registrar)
+- [ ] S27.1.2 — Criar repositório separado `mocchi-docs` ou pasta `docs-site/` no monorepo
+- [ ] S27.1.3 — Configurar domínio: `mocchi.dev` ou `docs.mocchi.dev` (registrar)
 - [ ] S27.1.4 — Configurar deploy no Vercel ou Netlify
 
 ---
@@ -2559,13 +2559,13 @@
 - [ ] S27.2.7 — Página: Performance (template cache, warm mode, dicas)
 - [ ] S27.2.8 — Página: Security (como as proteções funcionam)
 - [ ] S27.2.9 — Página: Troubleshooting (problemas comuns)
-- [ ] S27.2.10 — Página: API Reference (para quem usa `@sandbase/core` programaticamente)
+- [ ] S27.2.10 — Página: API Reference (para quem usa `@mocchi/core` programaticamente)
 
 ---
 
 ## T27.3 — Escrever blog post de lançamento
 
-- [ ] S27.3.1 — Rascunhar post: "Why I built Sandbase — stop breaking your local database"
+- [ ] S27.3.1 — Rascunhar post: "Why I built Mocchi — stop breaking your local database"
 - [ ] S27.3.2 — Incluir: problema, solução, exemplos reais, demonstração
 - [ ] S27.3.3 — Incluir GIF de demo do terminal
 - [ ] S27.3.4 — Publicar no blog do site ou em dev.to/hashnode
@@ -2576,7 +2576,7 @@
 
 # FASE 28 — Exemplo real: NestJS + Prisma {#fase-28}
 
-**Objetivo:** Criar um exemplo real funcional que qualquer dev pode clonar e rodar para ver o Sandbase em ação.
+**Objetivo:** Criar um exemplo real funcional que qualquer dev pode clonar e rodar para ver o Mocchi em ação.
 
 **Duração estimada:** 4–6 horas
 
@@ -2588,9 +2588,9 @@
 - [ ] S28.1.2 — Incluir schema Prisma com tabelas: `users`, `audit_log`
 - [ ] S28.1.3 — Adicionar regra RLS/trigger no PostgreSQL que bloqueia UPDATE/DELETE em `audit_log`
 - [ ] S28.1.4 — Configurar `docker-compose.yml` com PostgreSQL
-- [ ] S28.1.5 — Configurar `sandbase.config.ts`
+- [ ] S28.1.5 — Configurar `mocchi.config.ts`
 - [ ] S28.1.6 — Criar scenario `audit-log-append-only`
-- [ ] S28.1.7 — Adicionar testes E2E que usam `DATABASE_URL` injetado pelo Sandbase
+- [ ] S28.1.7 — Adicionar testes E2E que usam `DATABASE_URL` injetado pelo Mocchi
 - [ ] S28.1.8 — Criar `README.md` do exemplo com passo a passo completo
 
 ---
@@ -2622,7 +2622,7 @@
 - [ ] S29.1.5 — Criar pull request template
 - [ ] S29.1.6 — Configurar GitHub Discussions para Q&A da comunidade
 - [ ] S29.1.7 — Verificar que CI passa em 100% dos testes
-- [ ] S29.1.8 — Verificar que `npx @sandbase/cli init` funciona sem instalação prévia
+- [ ] S29.1.8 — Verificar que `npx @mocchi/cli init` funciona sem instalação prévia
 
 ---
 
@@ -2638,11 +2638,11 @@
 
 ## T29.3 — Lançamento
 
-- [ ] S29.3.1 — Postar em Hacker News (Show HN: Sandbase – Disposable PostgreSQL sandboxes for backend engineers)
+- [ ] S29.3.1 — Postar em Hacker News (Show HN: Mocchi – Disposable PostgreSQL sandboxes for backend engineers)
 - [ ] S29.3.2 — Postar nos subreddits
 - [ ] S29.3.3 — Postar no Twitter/X
 - [ ] S29.3.4 — Postar em Discord/Slack de comunidades de backend (NodeJS, Prisma, NestJS, etc)
-- [ ] S29.3.5 — Abrir `sandbase.dev` ao público
+- [ ] S29.3.5 — Abrir `mocchi.dev` ao público
 - [ ] S29.3.6 — Monitorar issues e responder no primeiro dia
 
 ---
@@ -2702,4 +2702,4 @@ Commit pequeno e frequente. A cada Tarefa concluída, um commit. A cada Fase con
 
 ---
 
-*Roadmap gerado em 2026-05-29 | Sandbase PRD v1.0*
+*Roadmap gerado em 2026-05-29 | Mocchi PRD v1.0*

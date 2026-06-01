@@ -74,10 +74,14 @@ web_modules/
 
 # dotenv environment variable files
 .env
+.env.mocchi
 .env.development.local
 .env.test.local
 .env.production.local
 .env.local
+
+# Mocchi local state
+.mocchi*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

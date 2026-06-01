@@ -1,7 +1,7 @@
 {
-  "name": "@sandbase/cli",
+  "name": "@mocchi/cli",
   "version": "0.0.0",
-  "description": "Command-line interface for Sandbase.",
+  "description": "Command-line interface for Mocchi.",
   "license": "MIT",
   "type": "module"
 }

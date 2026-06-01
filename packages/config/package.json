@@ -1,7 +1,7 @@
 {
-  "name": "@sandbase/config",
+  "name": "@mocchi/config",
   "version": "0.0.0",
-  "description": "Configuration loading and validation for Sandbase.",
+  "description": "Configuration loading and validation for Mocchi.",
   "license": "MIT",
   "type": "module"
 }

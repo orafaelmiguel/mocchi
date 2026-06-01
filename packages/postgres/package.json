@@ -1,7 +1,7 @@
 {
-  "name": "@sandbase/postgres",
+  "name": "@mocchi/postgres",
   "version": "0.0.0",
-  "description": "PostgreSQL adapter and safety utilities for Sandbase.",
+  "description": "PostgreSQL adapter and safety utilities for Mocchi.",
   "license": "MIT",
   "type": "module"
 }

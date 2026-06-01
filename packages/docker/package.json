@@ -1,7 +1,7 @@
 {
-  "name": "@sandbase/docker",
+  "name": "@mocchi/docker",
   "version": "0.0.0",
-  "description": "Docker and Docker Compose integration for Sandbase.",
+  "description": "Docker and Docker Compose integration for Mocchi.",
   "license": "MIT",
   "type": "module"
 }

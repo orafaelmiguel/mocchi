@@ -1,7 +1,7 @@
 {
-  "name": "@sandbase/core",
+  "name": "@mocchi/core",
   "version": "0.0.0",
-  "description": "Core sandbox orchestration for Sandbase.",
+  "description": "Core sandbox orchestration for Mocchi.",
   "license": "MIT",
   "type": "module"
 }
