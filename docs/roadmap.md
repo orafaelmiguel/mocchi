@@ -285,9 +285,9 @@
 
 ## T1.8 — Configurar Git hooks com Lefthook
 
-- [ ] S1.8.1 — Instalar: `pnpm add -Dw lefthook`
-- [ ] S1.8.2 — Rodar `pnpm lefthook install`
-- [ ] S1.8.3 — Criar `lefthook.yml`:
+- [x] S1.8.1 — Instalar: `pnpm add -Dw lefthook`
+- [x] S1.8.2 — Rodar `pnpm lefthook install`
+- [x] S1.8.3 — Criar `lefthook.yml`:
   ```yaml
   pre-commit:
     commands:
@@ -300,13 +300,13 @@
       commitlint:
         run: pnpm commitlint --edit {1}
   ```
-- [ ] S1.8.4 — Instalar commitlint: `pnpm add -Dw @commitlint/cli @commitlint/config-conventional`
-- [ ] S1.8.5 — Criar `commitlint.config.cjs`:
+- [x] S1.8.4 — Instalar commitlint: `pnpm add -Dw @commitlint/cli @commitlint/config-conventional`
+- [x] S1.8.5 — Criar `commitlint.config.cjs`:
   ```js
   module.exports = { extends: ['@commitlint/config-conventional'] }
   ```
-- [ ] S1.8.6 — Testar hook com commit mal formatado (deve rejeitar)
-- [ ] S1.8.7 — Testar hook com commit bem formatado (deve aceitar)
+- [x] S1.8.6 — Testar hook com commit mal formatado (deve rejeitar)
+- [x] S1.8.7 — Testar hook com commit bem formatado (deve aceitar)
 
 ---
 
