@@ -4,6 +4,13 @@
   "description": "Docker and Docker Compose integration for Mocchi.",
   "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "tsup",
     "test": "vitest run",

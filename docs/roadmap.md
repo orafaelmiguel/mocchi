@@ -346,13 +346,13 @@
 
 ## T1.10 — Configurar inter-dependências de pacotes
 
-- [ ] S1.10.1 — Adicionar `@mocchi/config` como dependência de `@mocchi/core` no `package.json`
-- [ ] S1.10.2 — Adicionar `@mocchi/postgres` como dependência de `@mocchi/core`
-- [ ] S1.10.3 — Adicionar `@mocchi/docker` como dependência de `@mocchi/core`
-- [ ] S1.10.4 — Adicionar `@mocchi/core` como dependência de `@mocchi/cli`
-- [ ] S1.10.5 — Rodar `pnpm install` para linkar pacotes locais via workspace
-- [ ] S1.10.6 — Verificar que `node_modules/@mocchi/core` aponta para `packages/core` (symlink)
-- [ ] S1.10.7 — Configurar `exports` no `package.json` de cada pacote:
+- [x] S1.10.1 — Adicionar `@mocchi/config` como dependência de `@mocchi/core` no `package.json`
+- [x] S1.10.2 — Adicionar `@mocchi/postgres` como dependência de `@mocchi/core`
+- [x] S1.10.3 — Adicionar `@mocchi/docker` como dependência de `@mocchi/core`
+- [x] S1.10.4 — Adicionar `@mocchi/core` como dependência de `@mocchi/cli`
+- [x] S1.10.5 — Rodar `pnpm install` para linkar pacotes locais via workspace
+- [x] S1.10.6 — Verificar que `node_modules/@mocchi/core` aponta para `packages/core` (symlink)
+- [x] S1.10.7 — Configurar `exports` no `package.json` de cada pacote:
   ```json
   {
     "exports": {
@@ -369,10 +369,10 @@
 
 ## T1.11 — Commit e tag do scaffold
 
-- [ ] S1.11.1 — Revisar todos os arquivos criados
-- [ ] S1.11.2 — Rodar `pnpm build && pnpm lint && pnpm test` e confirmar tudo verde
-- [ ] S1.11.3 — Commit: `chore: initialize monorepo with pnpm workspaces`
-- [ ] S1.11.4 — Tag: não fazer tag ainda (sem código de produto)
+- [x] S1.11.1 — Revisar todos os arquivos criados
+- [x] S1.11.2 — Rodar `pnpm build && pnpm lint && pnpm test` e confirmar tudo verde
+- [x] S1.11.3 — Commit: `chore: initialize monorepo with pnpm workspaces`
+- [x] S1.11.4 — Tag: não fazer tag ainda (sem código de produto)
 
 ---
 
