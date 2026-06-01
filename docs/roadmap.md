@@ -127,7 +127,7 @@
 
 **Duração estimada:** 4–6 horas
 
-**Pré-requisitos:** Node.js 20+, pnpm 8+ instalados na máquina
+**Pré-requisitos:** Node.js 22.13+ (24 recomendado), pnpm 11.5+ instalados na máquina
 
 ---
 
@@ -141,9 +141,9 @@
     - 'packages/*'
     - 'examples/*'
   ```
-- [x] S1.1.4 — Definir `engines` no `package.json` raiz: `{ "node": ">=20.0.0", "pnpm": ">=8.0.0" }`
-- [x] S1.1.5 — Criar arquivo `.nvmrc` com `20` para garantir versão correta
-- [x] S1.1.6 — Criar `.node-version` com `20` (alternativa ao nvmrc)
+- [x] S1.1.4 — Definir `engines` no `package.json` raiz: `{ "node": ">=22.13.0", "pnpm": ">=11.5.0" }`
+- [x] S1.1.5 — Criar arquivo `.nvmrc` com `24` para garantir versão correta
+- [x] S1.1.6 — Criar `.node-version` com `24` (alternativa ao nvmrc)
 
 ---
 
@@ -234,7 +234,7 @@
 - [x] S1.5.3 — Adicionar script `"lint": "eslint ."` na raiz
 - [x] S1.5.4 — Adicionar script `"lint:fix": "eslint . --fix"` na raiz
 - [x] S1.5.5 — Testar lint: `pnpm lint`
-- [x] S1.5.6 — Criar `.eslintignore` com `dist/`, `node_modules/`, `coverage/`
+- [x] S1.5.6 — Configurar ignores no `eslint.config.mjs` para `dist/`, `node_modules/`, `coverage/`
 
 ---
 
@@ -318,20 +318,20 @@
   name: CI
   on:
     push:
-      branches: [main]
+      branches: [main, develop]
     pull_request:
-      branches: [main]
+      branches: [main, develop]
   jobs:
     build:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
-        - uses: pnpm/action-setup@v3
+        - uses: pnpm/action-setup@v4
           with:
-            version: 8
+            version: 11.5.0
         - uses: actions/setup-node@v4
           with:
-            node-version: 20
+            node-version-file: '.node-version'
             cache: 'pnpm'
         - run: pnpm install --frozen-lockfile
         - run: pnpm build

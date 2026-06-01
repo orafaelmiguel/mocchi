@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
           version: 11.5.0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: '.node-version'
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - run: pnpm build

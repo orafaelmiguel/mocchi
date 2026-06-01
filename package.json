@@ -13,8 +13,8 @@
     "format:check": "prettier --check ."
   },
   "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=22.13.0",
+    "pnpm": ">=11.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.0.2",
