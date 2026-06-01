@@ -260,8 +260,8 @@
 
 ## T1.7 — Configurar Vitest
 
-- [ ] S1.7.1 — Instalar: `pnpm add -Dw vitest @vitest/coverage-v8`
-- [ ] S1.7.2 — Criar `vitest.config.ts` na raiz:
+- [x] S1.7.1 — Instalar: `pnpm add -Dw vitest @vitest/coverage-v8`
+- [x] S1.7.2 — Criar `vitest.config.ts` na raiz:
   ```ts
   import { defineConfig } from 'vitest/config'
   export default defineConfig({
@@ -275,11 +275,11 @@
     },
   })
   ```
-- [ ] S1.7.3 — Adicionar script `"test": "vitest run"` em cada pacote
-- [ ] S1.7.4 — Adicionar script `"test:watch": "vitest"` em cada pacote
-- [ ] S1.7.5 — Adicionar script `"test": "pnpm -r test"` na raiz
-- [ ] S1.7.6 — Criar pasta `src/__tests__/` em cada pacote com arquivo `.gitkeep`
-- [ ] S1.7.7 — Testar com arquivo de teste placeholder: `pnpm test`
+- [x] S1.7.3 — Adicionar script `"test": "vitest run"` em cada pacote
+- [x] S1.7.4 — Adicionar script `"test:watch": "vitest"` em cada pacote
+- [x] S1.7.5 — Adicionar script `"test": "pnpm -r test"` na raiz
+- [x] S1.7.6 — Criar pasta `src/__tests__/` em cada pacote com arquivo `.gitkeep`
+- [x] S1.7.7 — Testar com arquivo de teste placeholder: `pnpm test`
 
 ---
 
