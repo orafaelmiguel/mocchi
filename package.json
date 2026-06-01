@@ -1,0 +1,11 @@
+{
+  "name": "sandbase",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Disposable PostgreSQL sandboxes for dangerous migrations, queries and integration tests.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
