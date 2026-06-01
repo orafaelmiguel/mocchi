@@ -312,8 +312,8 @@
 
 ## T1.9 — Configurar GitHub Actions CI
 
-- [ ] S1.9.1 — Criar pasta `.github/workflows/`
-- [ ] S1.9.2 — Criar `.github/workflows/ci.yml`:
+- [x] S1.9.1 — Criar pasta `.github/workflows/`
+- [x] S1.9.2 — Criar `.github/workflows/ci.yml`:
   ```yaml
   name: CI
   on:
@@ -339,8 +339,8 @@
         - run: pnpm format:check
         - run: pnpm test
   ```
-- [ ] S1.9.3 — Fazer push e verificar que CI passa no GitHub
-- [ ] S1.9.4 — Adicionar badge de CI no `README.md`
+- [!] S1.9.3 — Fazer push e verificar que CI passa no GitHub
+- [x] S1.9.4 — Adicionar badge de CI no `README.md`
 
 ---
 
