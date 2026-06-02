@@ -657,25 +657,25 @@
 
 ## T3.5 — Implementar operações de banco
 
-- [ ] S3.5.1 — Criar `packages/postgres/src/operations.ts`
-- [ ] S3.5.2 — Implementar `listDatabases(client: PostgresClient): Promise<string[]>`:
+- [x] S3.5.1 — Criar `packages/postgres/src/operations.ts`
+- [x] S3.5.2 — Implementar `listDatabases(client: PostgresClient): Promise<string[]>`:
   - Conectar no banco `postgres` (default)
   - `SELECT datname FROM pg_database WHERE datistemplate = false`
-- [ ] S3.5.3 — Implementar `createDatabase(client: PostgresClient, name: string): Promise<void>`:
+- [x] S3.5.3 — Implementar `createDatabase(client: PostgresClient, name: string): Promise<void>`:
   - Usar `CREATE DATABASE` com `IF NOT EXISTS` style (na prática: verificar antes)
   - Nunca sanitizar com string interpolation direta — usar validação de nome de banco
-- [ ] S3.5.4 — Implementar `databaseExists(client: PostgresClient, name: string): Promise<boolean>`
-- [ ] S3.5.5 — Implementar `dropDatabase(client: PostgresClient, name: string): Promise<void>`:
+- [x] S3.5.4 — Implementar `databaseExists(client: PostgresClient, name: string): Promise<boolean>`
+- [x] S3.5.5 — Implementar `dropDatabase(client: PostgresClient, name: string): Promise<void>`:
   - Terminar conexões ativas antes de dropar (pg_terminate_backend)
   - `DROP DATABASE IF EXISTS "name"`
-- [ ] S3.5.6 — Implementar validação de nome de banco:
+- [x] S3.5.6 — Implementar validação de nome de banco:
   ```ts
   function validateDatabaseName(name: string): void {
     if (!name.match(/^[a-z0-9_]+$/)) throw new Error(...)
     if (name.length > 63) throw new Error(...)
   }
   ```
-- [ ] S3.5.7 — Testar: criar banco, verificar existência, dropar banco
+- [x] S3.5.7 — Testar: criar banco, verificar existência, dropar banco
 
 ---
 
