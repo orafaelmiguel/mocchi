@@ -754,9 +754,9 @@
 
 ## T3.11 — API pública do pacote postgres
 
-- [ ] S3.11.1 — Criar `packages/postgres/src/index.ts`
-- [ ] S3.11.2 — Exportar todos os tipos e funções públicas
-- [ ] S3.11.3 — Garantir que tipos internos (como detalhes do driver) não vazam
+- [x] S3.11.1 — Criar `packages/postgres/src/index.ts`
+- [x] S3.11.2 — Exportar todos os tipos e funções públicas
+- [x] S3.11.3 — Garantir que tipos internos (como detalhes do driver) não vazam
 
 ---
 
@@ -764,20 +764,20 @@
 
 > Nota: testes desta fase podem exigir um PostgreSQL rodando localmente. Configurar com `MOCCHI_TEST_DATABASE_URL`.
 
-- [ ] S3.12.1 — Criar `packages/postgres/src/__tests__/url.test.ts` com testes de parsing
-- [ ] S3.12.2 — Criar `packages/postgres/src/__tests__/naming.test.ts` com testes das strategies
-- [ ] S3.12.3 — Criar `packages/postgres/src/__tests__/guards.test.ts` com testes das proteções
-- [ ] S3.12.4 — Criar `packages/postgres/src/__tests__/operations.integration.test.ts` (marcados como integration)
-- [ ] S3.12.5 — Configurar skip de integration tests quando `MOCCHI_TEST_DATABASE_URL` não está definida
-- [ ] S3.12.6 — Testar criação e drop de database no integration test
+- [x] S3.12.1 — Criar `packages/postgres/src/__tests__/url.test.ts` com testes de parsing
+- [x] S3.12.2 — Criar `packages/postgres/src/__tests__/naming.test.ts` com testes das strategies
+- [x] S3.12.3 — Criar `packages/postgres/src/__tests__/guards.test.ts` com testes das proteções
+- [x] S3.12.4 — Criar `packages/postgres/src/__tests__/operations.integration.test.ts` (marcados como integration)
+- [x] S3.12.5 — Configurar skip de integration tests quando `MOCCHI_TEST_DATABASE_URL` não está definida
+- [x] S3.12.6 — Testar criação e drop de database no integration test
 
 ---
 
 ## T3.13 — Build e commit do pacote postgres
 
-- [ ] S3.13.1 — Rodar `pnpm build` no pacote postgres
-- [ ] S3.13.2 — Rodar `pnpm test` (unit tests)
-- [ ] S3.13.3 — Commit: `feat(postgres): implement postgres adapter with safety guards`
+- [x] S3.13.1 — Rodar `pnpm build` no pacote postgres
+- [x] S3.13.2 — Rodar `pnpm test` (unit tests)
+- [x] S3.13.3 — Commit: `feat(postgres): implement postgres adapter with safety guards`
 
 ---
 

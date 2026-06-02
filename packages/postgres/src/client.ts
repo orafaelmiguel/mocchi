@@ -2,7 +2,10 @@ import postgres from 'postgres'
 
 import { wrapQuery, type QueryResult } from './result.js'
 
-export type RawQueryResult = postgres.RowList<postgres.Row[]>
+export type RawQueryResult = Record<string, unknown>[] & {
+  count: number
+  command: string
+}
 
 export type PostgresClient = {
   connect(): Promise<void>
@@ -35,7 +38,9 @@ export function createClient(url: string): PostgresClient {
   })
 
   async function queryRaw(queryText: string): Promise<RawQueryResult> {
-    return await sql.unsafe<postgres.Row[]>(queryText)
+    const result = await sql.unsafe<postgres.Row[]>(queryText)
+
+    return result as RawQueryResult
   }
 
   return {
