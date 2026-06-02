@@ -608,8 +608,8 @@
 
 ## T3.3 — Implementar o cliente PostgreSQL
 
-- [ ] S3.3.1 — Criar `packages/postgres/src/client.ts`
-- [ ] S3.3.2 — Definir tipo `PostgresClient`:
+- [x] S3.3.1 — Criar `packages/postgres/src/client.ts`
+- [x] S3.3.2 — Definir tipo `PostgresClient`:
   ```ts
   export type PostgresClient = {
     connect(): Promise<void>
@@ -618,14 +618,14 @@
     queryRaw(sql: string): Promise<RawQueryResult>
   }
   ```
-- [ ] S3.3.3 — Implementar `createClient(url: string): PostgresClient` usando `postgres` package
-- [ ] S3.3.4 — Configurar `max: 1` (conexão única — CLI não precisa de pool)
-- [ ] S3.3.5 — Configurar `connect_timeout: 10` (10 segundos)
-- [ ] S3.3.6 — Implementar `connect()` — testar conexão com `SELECT 1`
-- [ ] S3.3.7 — Implementar `end()` — fechar todas as conexões
-- [ ] S3.3.8 — Tratar erro de conexão recusada com mensagem contextual
-- [ ] S3.3.9 — Tratar erro de autenticação (senha errada)
-- [ ] S3.3.10 — Tratar erro de timeout
+- [x] S3.3.3 — Implementar `createClient(url: string): PostgresClient` usando `postgres` package
+- [x] S3.3.4 — Configurar `max: 1` (conexão única — CLI não precisa de pool)
+- [x] S3.3.5 — Configurar `connect_timeout: 10` (10 segundos)
+- [x] S3.3.6 — Implementar `connect()` — testar conexão com `SELECT 1`
+- [x] S3.3.7 — Implementar `end()` — fechar todas as conexões
+- [x] S3.3.8 — Tratar erro de conexão recusada com mensagem contextual
+- [x] S3.3.9 — Tratar erro de autenticação (senha errada)
+- [x] S3.3.10 — Tratar erro de timeout
 
 ---
 
