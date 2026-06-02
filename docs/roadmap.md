@@ -704,11 +704,11 @@
 
 ## T3.7 — Implementar gerador de sandbox DATABASE_URL
 
-- [ ] S3.7.1 — Criar `packages/postgres/src/sandbox-url.ts`
-- [ ] S3.7.2 — Implementar `generateSandboxUrl(baseUrl: ParsedDatabaseUrl, sandboxName: string): string`
-- [ ] S3.7.3 — Substituir apenas o `database` na URL original
-- [ ] S3.7.4 — Preservar host, porta, usuário, senha, SSL exatamente como no original
-- [ ] S3.7.5 — Testar com URL simples e URL com parâmetros
+- [x] S3.7.1 — Criar `packages/postgres/src/sandbox-url.ts`
+- [x] S3.7.2 — Implementar `generateSandboxUrl(baseUrl: ParsedDatabaseUrl, sandboxName: string): string`
+- [x] S3.7.3 — Substituir apenas o `database` na URL original
+- [x] S3.7.4 — Preservar host, porta, usuário, senha, SSL exatamente como no original
+- [x] S3.7.5 — Testar com URL simples e URL com parâmetros
 
 ---
 
