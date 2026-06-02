@@ -1,11 +1,8 @@
 import postgres from 'postgres'
 
-export type RawQueryResult = postgres.RowList<postgres.Row[]>
+import { wrapQuery, type QueryResult } from './result.js'
 
-export type QueryResult = {
-  rows: Record<string, unknown>[]
-  rowCount: number
-}
+export type RawQueryResult = postgres.RowList<postgres.Row[]>
 
 export type PostgresClient = {
   connect(): Promise<void>
@@ -38,11 +35,7 @@ export function createClient(url: string): PostgresClient {
   })
 
   async function queryRaw(queryText: string): Promise<RawQueryResult> {
-    try {
-      return await sql.unsafe<postgres.Row[]>(queryText)
-    } catch (error) {
-      throw normalizeConnectionError(error)
-    }
+    return await sql.unsafe<postgres.Row[]>(queryText)
   }
 
   return {
@@ -58,13 +51,8 @@ export function createClient(url: string): PostgresClient {
       await sql.end()
     },
 
-    async query(queryText: string): Promise<QueryResult> {
-      const result = await queryRaw(queryText)
-
-      return {
-        rows: result.map((row) => ({ ...row })),
-        rowCount: result.count,
-      }
+    query(queryText: string): Promise<QueryResult> {
+      return wrapQuery(() => queryRaw(queryText))
     },
 
     queryRaw,

@@ -631,14 +631,14 @@
 
 ## T3.4 — Implementar tipo `QueryResult` e captura de SQLSTATE
 
-- [ ] S3.4.1 — Criar `packages/postgres/src/result.ts`
-- [ ] S3.4.2 — Definir tipo `QueryResult`:
+- [x] S3.4.1 — Criar `packages/postgres/src/result.ts`
+- [x] S3.4.2 — Definir tipo `QueryResult`:
   ```ts
   export type QueryResult = 
     | { success: true; rows: Record<string, unknown>[]; rowCount: number }
     | { success: false; error: PostgresQueryError }
   ```
-- [ ] S3.4.3 — Definir tipo `PostgresQueryError`:
+- [x] S3.4.3 — Definir tipo `PostgresQueryError`:
   ```ts
   export type PostgresQueryError = {
     message: string
@@ -648,10 +648,10 @@
     position?: string
   }
   ```
-- [ ] S3.4.4 — Implementar função `wrapQuery(fn: () => Promise<unknown>): Promise<QueryResult>`
-- [ ] S3.4.5 — Capturar erros do driver postgres e extrair `code` (SQLSTATE) do objeto de erro
-- [ ] S3.4.6 — Mapear erro do driver para `PostgresQueryError` com tipo correto
-- [ ] S3.4.7 — Garantir que erros desconhecidos também são capturados
+- [x] S3.4.4 — Implementar função `wrapQuery(fn: () => Promise<unknown>): Promise<QueryResult>`
+- [x] S3.4.5 — Capturar erros do driver postgres e extrair `code` (SQLSTATE) do objeto de erro
+- [x] S3.4.6 — Mapear erro do driver para `PostgresQueryError` com tipo correto
+- [x] S3.4.7 — Garantir que erros desconhecidos também são capturados
 
 ---
 

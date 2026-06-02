@@ -75,8 +75,27 @@ describe('createClient', () => {
     await expect(
       createClient('postgres://user:pass@localhost:5432/mydb').query('SELECT * FROM users'),
     ).resolves.toEqual({
+      success: true,
       rows: [{ id: 1 }],
       rowCount: 3,
+    })
+  })
+
+  it('returns failed query results with SQLSTATE errors', async () => {
+    const sql = createSqlMock({
+      unsafeError: Object.assign(new Error('permission denied'), { code: '42501' }),
+    })
+
+    mocks.postgres.mockReturnValue(sql)
+
+    await expect(
+      createClient('postgres://user:pass@localhost:5432/mydb').query('SELECT * FROM users'),
+    ).resolves.toEqual({
+      success: false,
+      error: {
+        message: 'permission denied',
+        sqlstate: '42501',
+      },
     })
   })
 
@@ -128,6 +147,7 @@ describe('createClient', () => {
 
 type SqlMockOptions = {
   tagError?: Error
+  unsafeError?: Error
   unsafeResult?: unknown
 }
 
@@ -141,7 +161,9 @@ function createSqlMock(options: SqlMockOptions = {}) {
   }
 
   return Object.assign(sql, {
-    unsafe: vi.fn().mockResolvedValue(options.unsafeResult ?? createRowList([])),
+    unsafe: options.unsafeError
+      ? vi.fn().mockRejectedValue(options.unsafeError)
+      : vi.fn().mockResolvedValue(options.unsafeResult ?? createRowList([])),
     end: vi.fn().mockResolvedValue(undefined),
   })
 }
