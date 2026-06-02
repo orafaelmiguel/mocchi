@@ -18,6 +18,7 @@ export {
 } from './guards.js'
 export { generateSandboxName, SandboxNameError } from './naming.js'
 export type { NamingOptions } from './naming.js'
+export { checkCanConnect, checkCanCreateDatabase } from './permissions.js'
 export { wrapQuery } from './result.js'
 export type { PostgresQueryError, QueryResult } from './result.js'
 export { generateSandboxUrl } from './sandbox-url.js'

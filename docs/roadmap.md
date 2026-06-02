@@ -742,13 +742,13 @@
 
 ## T3.10 — Verificador de permissões
 
-- [ ] S3.10.1 — Criar `packages/postgres/src/permissions.ts`
-- [ ] S3.10.2 — Implementar `checkCanCreateDatabase(client: PostgresClient): Promise<boolean>`:
+- [x] S3.10.1 — Criar `packages/postgres/src/permissions.ts`
+- [x] S3.10.2 — Implementar `checkCanCreateDatabase(client: PostgresClient): Promise<boolean>`:
   - Tentar criar um banco temporário com nome `sbx_permission_check_*`
   - Dropar imediatamente se criou com sucesso
   - Retornar `true` se ok, `false` se sem permissão
-- [ ] S3.10.3 — Implementar `checkCanConnect(url: string): Promise<boolean>`
-- [ ] S3.10.4 — Não lançar exceção — retornar boolean (quem lança é quem chama)
+- [x] S3.10.3 — Implementar `checkCanConnect(url: string): Promise<boolean>`
+- [x] S3.10.4 — Não lançar exceção — retornar boolean (quem lança é quem chama)
 
 ---
 
