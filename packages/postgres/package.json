@@ -17,6 +17,10 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "@types/node": "^25.9.1",
     "tsup": "^8.5.1"
+  },
+  "dependencies": {
+    "postgres": "^3.4.9"
   }
 }

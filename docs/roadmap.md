@@ -574,16 +574,16 @@
 
 ## T3.1 — Instalar dependências
 
-- [ ] S3.1.1 — Instalar driver: `pnpm add postgres` (driver `postgres` / `porsager/postgres` — sql template tag, sem ORM)
-- [ ] S3.1.2 — Instalar types de Node.js: `pnpm add -D @types/node`
-- [ ] S3.1.3 — Verificar que `postgres` funciona em ESM e CJS
+- [x] S3.1.1 — Instalar driver: `pnpm add postgres` (driver `postgres` / `porsager/postgres` — sql template tag, sem ORM)
+- [x] S3.1.2 — Instalar types de Node.js: `pnpm add -D @types/node`
+- [x] S3.1.3 — Verificar que `postgres` funciona em ESM e CJS
 
 ---
 
 ## T3.2 — Implementar o parser de DATABASE_URL
 
-- [ ] S3.2.1 — Criar `packages/postgres/src/url.ts`
-- [ ] S3.2.2 — Definir tipo `ParsedDatabaseUrl`:
+- [x] S3.2.1 — Criar `packages/postgres/src/url.ts`
+- [x] S3.2.2 — Definir tipo `ParsedDatabaseUrl`:
   ```ts
   export type ParsedDatabaseUrl = {
     host: string
@@ -595,14 +595,14 @@
     raw: string // sem senha no log
   }
   ```
-- [ ] S3.2.3 — Implementar `parseDatabaseUrl(url: string): ParsedDatabaseUrl`
-- [ ] S3.2.4 — Usar `URL` global do Node.js para parsear (não regex)
-- [ ] S3.2.5 — Tratar `ssl=true` e `sslmode=require` nos search params
-- [ ] S3.2.6 — Garantir que `password` nunca apareça em logs (criar getter `safeString` sem senha)
-- [ ] S3.2.7 — Tratar URL malformada com erro descritivo
-- [ ] S3.2.8 — Testar: URL simples `postgres://user:pass@localhost:5432/mydb`
-- [ ] S3.2.9 — Testar: URL com SSL
-- [ ] S3.2.10 — Testar: URL malformada lança erro
+- [x] S3.2.3 — Implementar `parseDatabaseUrl(url: string): ParsedDatabaseUrl`
+- [x] S3.2.4 — Usar `URL` global do Node.js para parsear (não regex)
+- [x] S3.2.5 — Tratar `ssl=true` e `sslmode=require` nos search params
+- [x] S3.2.6 — Garantir que `password` nunca apareça em logs (criar getter `safeString` sem senha)
+- [x] S3.2.7 — Tratar URL malformada com erro descritivo
+- [x] S3.2.8 — Testar: URL simples `postgres://user:pass@localhost:5432/mydb`
+- [x] S3.2.9 — Testar: URL com SSL
+- [x] S3.2.10 — Testar: URL malformada lança erro
 
 ---
 
