@@ -574,16 +574,16 @@
 
 ## T3.1 — Instalar dependências
 
-- [ ] S3.1.1 — Instalar driver: `pnpm add postgres` (driver `postgres` / `porsager/postgres` — sql template tag, sem ORM)
-- [ ] S3.1.2 — Instalar types de Node.js: `pnpm add -D @types/node`
-- [ ] S3.1.3 — Verificar que `postgres` funciona em ESM e CJS
+- [x] S3.1.1 — Instalar driver: `pnpm add postgres` (driver `postgres` / `porsager/postgres` — sql template tag, sem ORM)
+- [x] S3.1.2 — Instalar types de Node.js: `pnpm add -D @types/node`
+- [x] S3.1.3 — Verificar que `postgres` funciona em ESM e CJS
 
 ---
 
 ## T3.2 — Implementar o parser de DATABASE_URL
 
-- [ ] S3.2.1 — Criar `packages/postgres/src/url.ts`
-- [ ] S3.2.2 — Definir tipo `ParsedDatabaseUrl`:
+- [x] S3.2.1 — Criar `packages/postgres/src/url.ts`
+- [x] S3.2.2 — Definir tipo `ParsedDatabaseUrl`:
   ```ts
   export type ParsedDatabaseUrl = {
     host: string
@@ -595,21 +595,21 @@
     raw: string // sem senha no log
   }
   ```
-- [ ] S3.2.3 — Implementar `parseDatabaseUrl(url: string): ParsedDatabaseUrl`
-- [ ] S3.2.4 — Usar `URL` global do Node.js para parsear (não regex)
-- [ ] S3.2.5 — Tratar `ssl=true` e `sslmode=require` nos search params
-- [ ] S3.2.6 — Garantir que `password` nunca apareça em logs (criar getter `safeString` sem senha)
-- [ ] S3.2.7 — Tratar URL malformada com erro descritivo
-- [ ] S3.2.8 — Testar: URL simples `postgres://user:pass@localhost:5432/mydb`
-- [ ] S3.2.9 — Testar: URL com SSL
-- [ ] S3.2.10 — Testar: URL malformada lança erro
+- [x] S3.2.3 — Implementar `parseDatabaseUrl(url: string): ParsedDatabaseUrl`
+- [x] S3.2.4 — Usar `URL` global do Node.js para parsear (não regex)
+- [x] S3.2.5 — Tratar `ssl=true` e `sslmode=require` nos search params
+- [x] S3.2.6 — Garantir que `password` nunca apareça em logs (criar getter `safeString` sem senha)
+- [x] S3.2.7 — Tratar URL malformada com erro descritivo
+- [x] S3.2.8 — Testar: URL simples `postgres://user:pass@localhost:5432/mydb`
+- [x] S3.2.9 — Testar: URL com SSL
+- [x] S3.2.10 — Testar: URL malformada lança erro
 
 ---
 
 ## T3.3 — Implementar o cliente PostgreSQL
 
-- [ ] S3.3.1 — Criar `packages/postgres/src/client.ts`
-- [ ] S3.3.2 — Definir tipo `PostgresClient`:
+- [x] S3.3.1 — Criar `packages/postgres/src/client.ts`
+- [x] S3.3.2 — Definir tipo `PostgresClient`:
   ```ts
   export type PostgresClient = {
     connect(): Promise<void>
@@ -618,27 +618,27 @@
     queryRaw(sql: string): Promise<RawQueryResult>
   }
   ```
-- [ ] S3.3.3 — Implementar `createClient(url: string): PostgresClient` usando `postgres` package
-- [ ] S3.3.4 — Configurar `max: 1` (conexão única — CLI não precisa de pool)
-- [ ] S3.3.5 — Configurar `connect_timeout: 10` (10 segundos)
-- [ ] S3.3.6 — Implementar `connect()` — testar conexão com `SELECT 1`
-- [ ] S3.3.7 — Implementar `end()` — fechar todas as conexões
-- [ ] S3.3.8 — Tratar erro de conexão recusada com mensagem contextual
-- [ ] S3.3.9 — Tratar erro de autenticação (senha errada)
-- [ ] S3.3.10 — Tratar erro de timeout
+- [x] S3.3.3 — Implementar `createClient(url: string): PostgresClient` usando `postgres` package
+- [x] S3.3.4 — Configurar `max: 1` (conexão única — CLI não precisa de pool)
+- [x] S3.3.5 — Configurar `connect_timeout: 10` (10 segundos)
+- [x] S3.3.6 — Implementar `connect()` — testar conexão com `SELECT 1`
+- [x] S3.3.7 — Implementar `end()` — fechar todas as conexões
+- [x] S3.3.8 — Tratar erro de conexão recusada com mensagem contextual
+- [x] S3.3.9 — Tratar erro de autenticação (senha errada)
+- [x] S3.3.10 — Tratar erro de timeout
 
 ---
 
 ## T3.4 — Implementar tipo `QueryResult` e captura de SQLSTATE
 
-- [ ] S3.4.1 — Criar `packages/postgres/src/result.ts`
-- [ ] S3.4.2 — Definir tipo `QueryResult`:
+- [x] S3.4.1 — Criar `packages/postgres/src/result.ts`
+- [x] S3.4.2 — Definir tipo `QueryResult`:
   ```ts
   export type QueryResult = 
     | { success: true; rows: Record<string, unknown>[]; rowCount: number }
     | { success: false; error: PostgresQueryError }
   ```
-- [ ] S3.4.3 — Definir tipo `PostgresQueryError`:
+- [x] S3.4.3 — Definir tipo `PostgresQueryError`:
   ```ts
   export type PostgresQueryError = {
     message: string
@@ -648,41 +648,41 @@
     position?: string
   }
   ```
-- [ ] S3.4.4 — Implementar função `wrapQuery(fn: () => Promise<unknown>): Promise<QueryResult>`
-- [ ] S3.4.5 — Capturar erros do driver postgres e extrair `code` (SQLSTATE) do objeto de erro
-- [ ] S3.4.6 — Mapear erro do driver para `PostgresQueryError` com tipo correto
-- [ ] S3.4.7 — Garantir que erros desconhecidos também são capturados
+- [x] S3.4.4 — Implementar função `wrapQuery(fn: () => Promise<unknown>): Promise<QueryResult>`
+- [x] S3.4.5 — Capturar erros do driver postgres e extrair `code` (SQLSTATE) do objeto de erro
+- [x] S3.4.6 — Mapear erro do driver para `PostgresQueryError` com tipo correto
+- [x] S3.4.7 — Garantir que erros desconhecidos também são capturados
 
 ---
 
 ## T3.5 — Implementar operações de banco
 
-- [ ] S3.5.1 — Criar `packages/postgres/src/operations.ts`
-- [ ] S3.5.2 — Implementar `listDatabases(client: PostgresClient): Promise<string[]>`:
+- [x] S3.5.1 — Criar `packages/postgres/src/operations.ts`
+- [x] S3.5.2 — Implementar `listDatabases(client: PostgresClient): Promise<string[]>`:
   - Conectar no banco `postgres` (default)
   - `SELECT datname FROM pg_database WHERE datistemplate = false`
-- [ ] S3.5.3 — Implementar `createDatabase(client: PostgresClient, name: string): Promise<void>`:
+- [x] S3.5.3 — Implementar `createDatabase(client: PostgresClient, name: string): Promise<void>`:
   - Usar `CREATE DATABASE` com `IF NOT EXISTS` style (na prática: verificar antes)
   - Nunca sanitizar com string interpolation direta — usar validação de nome de banco
-- [ ] S3.5.4 — Implementar `databaseExists(client: PostgresClient, name: string): Promise<boolean>`
-- [ ] S3.5.5 — Implementar `dropDatabase(client: PostgresClient, name: string): Promise<void>`:
+- [x] S3.5.4 — Implementar `databaseExists(client: PostgresClient, name: string): Promise<boolean>`
+- [x] S3.5.5 — Implementar `dropDatabase(client: PostgresClient, name: string): Promise<void>`:
   - Terminar conexões ativas antes de dropar (pg_terminate_backend)
   - `DROP DATABASE IF EXISTS "name"`
-- [ ] S3.5.6 — Implementar validação de nome de banco:
+- [x] S3.5.6 — Implementar validação de nome de banco:
   ```ts
   function validateDatabaseName(name: string): void {
     if (!name.match(/^[a-z0-9_]+$/)) throw new Error(...)
     if (name.length > 63) throw new Error(...)
   }
   ```
-- [ ] S3.5.7 — Testar: criar banco, verificar existência, dropar banco
+- [x] S3.5.7 — Testar: criar banco, verificar existência, dropar banco
 
 ---
 
 ## T3.6 — Implementar gerador de nome de sandbox
 
-- [ ] S3.6.1 — Criar `packages/postgres/src/naming.ts`
-- [ ] S3.6.2 — Implementar `generateSandboxName(opts: NamingOptions): string`:
+- [x] S3.6.1 — Criar `packages/postgres/src/naming.ts`
+- [x] S3.6.2 — Implementar `generateSandboxName(opts: NamingOptions): string`:
   ```ts
   type NamingOptions = {
     strategy: 'branch' | 'timestamp' | 'manual'
@@ -691,72 +691,72 @@
     branchName?: string
   }
   ```
-- [ ] S3.6.3 — Strategy `branch`: detectar branch git atual via `git rev-parse --abbrev-ref HEAD`
-- [ ] S3.6.4 — Sanitizar nome de branch: trocar `/`, `-`, espaços por `_`
-- [ ] S3.6.5 — Truncar para max 50 chars (considerando o prefixo + sufixo numérico)
-- [ ] S3.6.6 — Adicionar sufixo de 4 dígitos aleatórios para evitar colisão
-- [ ] S3.6.7 — Strategy `timestamp`: formato `YYYYMMDD_HHMMSS`
-- [ ] S3.6.8 — Strategy `manual`: usar `manualName` sanitizado com sufixo
-- [ ] S3.6.9 — Garantir que nome resultante começa com o `prefix`
-- [ ] S3.6.10 — Testar todas as strategies
+- [x] S3.6.3 — Strategy `branch`: detectar branch git atual via `git rev-parse --abbrev-ref HEAD`
+- [x] S3.6.4 — Sanitizar nome de branch: trocar `/`, `-`, espaços por `_`
+- [x] S3.6.5 — Truncar para max 50 chars (considerando o prefixo + sufixo numérico)
+- [x] S3.6.6 — Adicionar sufixo de 4 dígitos aleatórios para evitar colisão
+- [x] S3.6.7 — Strategy `timestamp`: formato `YYYYMMDD_HHMMSS`
+- [x] S3.6.8 — Strategy `manual`: usar `manualName` sanitizado com sufixo
+- [x] S3.6.9 — Garantir que nome resultante começa com o `prefix`
+- [x] S3.6.10 — Testar todas as strategies
 
 ---
 
 ## T3.7 — Implementar gerador de sandbox DATABASE_URL
 
-- [ ] S3.7.1 — Criar `packages/postgres/src/sandbox-url.ts`
-- [ ] S3.7.2 — Implementar `generateSandboxUrl(baseUrl: ParsedDatabaseUrl, sandboxName: string): string`
-- [ ] S3.7.3 — Substituir apenas o `database` na URL original
-- [ ] S3.7.4 — Preservar host, porta, usuário, senha, SSL exatamente como no original
-- [ ] S3.7.5 — Testar com URL simples e URL com parâmetros
+- [x] S3.7.1 — Criar `packages/postgres/src/sandbox-url.ts`
+- [x] S3.7.2 — Implementar `generateSandboxUrl(baseUrl: ParsedDatabaseUrl, sandboxName: string): string`
+- [x] S3.7.3 — Substituir apenas o `database` na URL original
+- [x] S3.7.4 — Preservar host, porta, usuário, senha, SSL exatamente como no original
+- [x] S3.7.5 — Testar com URL simples e URL com parâmetros
 
 ---
 
 ## T3.8 — Implementar executor de SQL
 
-- [ ] S3.8.1 — Criar `packages/postgres/src/executor.ts`
-- [ ] S3.8.2 — Implementar `executeSqlString(client: PostgresClient, sql: string): Promise<QueryResult>`
-- [ ] S3.8.3 — Implementar `executeSqlFile(client: PostgresClient, filePath: string): Promise<QueryResult>`
-- [ ] S3.8.4 — Ler arquivo com `fs.readFile` antes de executar
-- [ ] S3.8.5 — Tratar arquivo não encontrado com erro amigável
-- [ ] S3.8.6 — Tratar arquivo vazio (retornar sucesso sem rows)
+- [x] S3.8.1 — Criar `packages/postgres/src/executor.ts`
+- [x] S3.8.2 — Implementar `executeSqlString(client: PostgresClient, sql: string): Promise<QueryResult>`
+- [x] S3.8.3 — Implementar `executeSqlFile(client: PostgresClient, filePath: string): Promise<QueryResult>`
+- [x] S3.8.4 — Ler arquivo com `fs.readFile` antes de executar
+- [x] S3.8.5 — Tratar arquivo não encontrado com erro amigável
+- [x] S3.8.6 — Tratar arquivo vazio (retornar sucesso sem rows)
 
 ---
 
 ## T3.9 — Implementar proteções de segurança
 
-- [ ] S3.9.1 — Criar `packages/postgres/src/guards.ts`
-- [ ] S3.9.2 — Implementar `assertSandboxPrefix(name: string, prefix: string): void`:
+- [x] S3.9.1 — Criar `packages/postgres/src/guards.ts`
+- [x] S3.9.2 — Implementar `assertSandboxPrefix(name: string, prefix: string): void`:
   - Lança erro se `name` não começa com `prefix + '_'`
   - Mensagem: `"Refusing to drop '${name}': does not match sandbox prefix '${prefix}_'"`
-- [ ] S3.9.3 — Implementar `assertNotOriginalDatabase(sandboxName: string, originalName: string): void`:
+- [x] S3.9.3 — Implementar `assertNotOriginalDatabase(sandboxName: string, originalName: string): void`:
   - Lança erro se os nomes são iguais
-- [ ] S3.9.4 — Implementar `assertNotProductionHost(host: string): void`:
+- [x] S3.9.4 — Implementar `assertNotProductionHost(host: string): void`:
   - Verificar se host contém strings suspeitas: `production`, `prod`, `prd`, `live`
   - Aviso forte (não bloqueia — pode ser falso positivo)
-- [ ] S3.9.5 — Implementar `assertNotProductionEnv(env: NodeJS.ProcessEnv): void`:
+- [x] S3.9.5 — Implementar `assertNotProductionEnv(env: NodeJS.ProcessEnv): void`:
   - Bloquear se `NODE_ENV` contém `production`, `prod`, `prd`
-- [ ] S3.9.6 — Testar cada proteção individualmente
+- [x] S3.9.6 — Testar cada proteção individualmente
 
 ---
 
 ## T3.10 — Verificador de permissões
 
-- [ ] S3.10.1 — Criar `packages/postgres/src/permissions.ts`
-- [ ] S3.10.2 — Implementar `checkCanCreateDatabase(client: PostgresClient): Promise<boolean>`:
+- [x] S3.10.1 — Criar `packages/postgres/src/permissions.ts`
+- [x] S3.10.2 — Implementar `checkCanCreateDatabase(client: PostgresClient): Promise<boolean>`:
   - Tentar criar um banco temporário com nome `sbx_permission_check_*`
   - Dropar imediatamente se criou com sucesso
   - Retornar `true` se ok, `false` se sem permissão
-- [ ] S3.10.3 — Implementar `checkCanConnect(url: string): Promise<boolean>`
-- [ ] S3.10.4 — Não lançar exceção — retornar boolean (quem lança é quem chama)
+- [x] S3.10.3 — Implementar `checkCanConnect(url: string): Promise<boolean>`
+- [x] S3.10.4 — Não lançar exceção — retornar boolean (quem lança é quem chama)
 
 ---
 
 ## T3.11 — API pública do pacote postgres
 
-- [ ] S3.11.1 — Criar `packages/postgres/src/index.ts`
-- [ ] S3.11.2 — Exportar todos os tipos e funções públicas
-- [ ] S3.11.3 — Garantir que tipos internos (como detalhes do driver) não vazam
+- [x] S3.11.1 — Criar `packages/postgres/src/index.ts`
+- [x] S3.11.2 — Exportar todos os tipos e funções públicas
+- [x] S3.11.3 — Garantir que tipos internos (como detalhes do driver) não vazam
 
 ---
 
@@ -764,20 +764,20 @@
 
 > Nota: testes desta fase podem exigir um PostgreSQL rodando localmente. Configurar com `MOCCHI_TEST_DATABASE_URL`.
 
-- [ ] S3.12.1 — Criar `packages/postgres/src/__tests__/url.test.ts` com testes de parsing
-- [ ] S3.12.2 — Criar `packages/postgres/src/__tests__/naming.test.ts` com testes das strategies
-- [ ] S3.12.3 — Criar `packages/postgres/src/__tests__/guards.test.ts` com testes das proteções
-- [ ] S3.12.4 — Criar `packages/postgres/src/__tests__/operations.integration.test.ts` (marcados como integration)
-- [ ] S3.12.5 — Configurar skip de integration tests quando `MOCCHI_TEST_DATABASE_URL` não está definida
-- [ ] S3.12.6 — Testar criação e drop de database no integration test
+- [x] S3.12.1 — Criar `packages/postgres/src/__tests__/url.test.ts` com testes de parsing
+- [x] S3.12.2 — Criar `packages/postgres/src/__tests__/naming.test.ts` com testes das strategies
+- [x] S3.12.3 — Criar `packages/postgres/src/__tests__/guards.test.ts` com testes das proteções
+- [x] S3.12.4 — Criar `packages/postgres/src/__tests__/operations.integration.test.ts` (marcados como integration)
+- [x] S3.12.5 — Configurar skip de integration tests quando `MOCCHI_TEST_DATABASE_URL` não está definida
+- [x] S3.12.6 — Testar criação e drop de database no integration test
 
 ---
 
 ## T3.13 — Build e commit do pacote postgres
 
-- [ ] S3.13.1 — Rodar `pnpm build` no pacote postgres
-- [ ] S3.13.2 — Rodar `pnpm test` (unit tests)
-- [ ] S3.13.3 — Commit: `feat(postgres): implement postgres adapter with safety guards`
+- [x] S3.13.1 — Rodar `pnpm build` no pacote postgres
+- [x] S3.13.2 — Rodar `pnpm test` (unit tests)
+- [x] S3.13.3 — Commit: `feat(postgres): implement postgres adapter with safety guards`
 
 ---
 
