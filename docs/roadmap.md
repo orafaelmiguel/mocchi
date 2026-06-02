@@ -388,8 +388,8 @@
 
 ## T2.1 — Definir os tipos de configuração
 
-- [ ] S2.1.1 — Criar `packages/config/src/types.ts`
-- [ ] S2.1.2 — Definir tipo `DatabaseConfig`:
+- [x] S2.1.1 — Criar `packages/config/src/types.ts`
+- [x] S2.1.2 — Definir tipo `DatabaseConfig`:
   ```ts
   export type DatabaseConfig = {
     provider: 'postgres'
@@ -397,7 +397,7 @@
     strategy: 'sibling-database'
   }
   ```
-- [ ] S2.1.3 — Definir tipo `DockerConfig`:
+- [x] S2.1.3 — Definir tipo `DockerConfig`:
   ```ts
   export type DockerConfig = {
     composeFile?: string
@@ -405,29 +405,29 @@
     autoStart?: boolean
   }
   ```
-- [ ] S2.1.4 — Definir tipo `MigrationsConfig`:
+- [x] S2.1.4 — Definir tipo `MigrationsConfig`:
   ```ts
   export type MigrationsConfig = {
     command: string
     timeout?: number
   }
   ```
-- [ ] S2.1.5 — Definir tipo `SeedConfig`:
+- [x] S2.1.5 — Definir tipo `SeedConfig`:
   ```ts
   export type SeedConfig = {
     command?: string
     optional?: boolean
   }
   ```
-- [ ] S2.1.6 — Definir tipo `SandboxNamingStrategy`:
+- [x] S2.1.6 — Definir tipo `SandboxNamingStrategy`:
   ```ts
   export type SandboxNamingStrategy = 'branch' | 'timestamp' | 'manual'
   ```
-- [ ] S2.1.7 — Definir tipo `SandboxCleanupStrategy`:
+- [x] S2.1.7 — Definir tipo `SandboxCleanupStrategy`:
   ```ts
   export type SandboxCleanupStrategy = 'on-exit' | 'never' | 'always'
   ```
-- [ ] S2.1.8 — Definir tipo `SandboxConfig`:
+- [x] S2.1.8 — Definir tipo `SandboxConfig`:
   ```ts
   export type SandboxConfig = {
     name?: SandboxNamingStrategy
@@ -436,7 +436,7 @@
     ttl?: string
   }
   ```
-- [ ] S2.1.9 — Definir tipo principal `MocchiConfig`:
+- [x] S2.1.9 — Definir tipo principal `MocchiConfig`:
   ```ts
   export type MocchiConfig = {
     project: string
@@ -447,27 +447,27 @@
     sandbox?: SandboxConfig
   }
   ```
-- [ ] S2.1.10 — Definir tipo `ResolvedMocchiConfig` com todos os campos opcionais preenchidos com defaults
+- [x] S2.1.10 — Definir tipo `ResolvedMocchiConfig` com todos os campos opcionais preenchidos com defaults
 
 ---
 
 ## T2.2 — Implementar a função `defineMocchiConfig`
 
-- [ ] S2.2.1 — Criar `packages/config/src/define.ts`
-- [ ] S2.2.2 — Implementar função que apenas retorna o objeto (type safety helper, padrão Vite):
+- [x] S2.2.1 — Criar `packages/config/src/define.ts`
+- [x] S2.2.2 — Implementar função que apenas retorna o objeto (type safety helper, padrão Vite):
   ```ts
   export function defineMocchiConfig(config: MocchiConfig): MocchiConfig {
     return config
   }
   ```
-- [ ] S2.2.3 — Adicionar comentário JSDoc explicando o propósito
+- [x] S2.2.3 — Adicionar comentário JSDoc explicando o propósito
 
 ---
 
 ## T2.3 — Implementar o resolver de defaults
 
-- [ ] S2.3.1 — Criar `packages/config/src/defaults.ts`
-- [ ] S2.3.2 — Definir `DEFAULT_SANDBOX_CONFIG`:
+- [x] S2.3.1 — Criar `packages/config/src/defaults.ts`
+- [x] S2.3.2 — Definir `DEFAULT_SANDBOX_CONFIG`:
   ```ts
   export const DEFAULT_SANDBOX_CONFIG = {
     name: 'branch' as const,
@@ -476,89 +476,89 @@
     ttl: '2h',
   }
   ```
-- [ ] S2.3.3 — Implementar função `resolveDefaults(config: MocchiConfig): ResolvedMocchiConfig`
-- [ ] S2.3.4 — Mesclar `sandbox` do usuário com `DEFAULT_SANDBOX_CONFIG`
-- [ ] S2.3.5 — Resolver `docker.autoStart` para `true` se não definido
-- [ ] S2.3.6 — Resolver `seed.optional` para `true` se não definido
-- [ ] S2.3.7 — Resolver `migrations.timeout` para `120000` (2 min) se não definido
+- [x] S2.3.3 — Implementar função `resolveDefaults(config: MocchiConfig): ResolvedMocchiConfig`
+- [x] S2.3.4 — Mesclar `sandbox` do usuário com `DEFAULT_SANDBOX_CONFIG`
+- [x] S2.3.5 — Resolver `docker.autoStart` para `true` se não definido
+- [x] S2.3.6 — Resolver `seed.optional` para `true` se não definido
+- [x] S2.3.7 — Resolver `migrations.timeout` para `120000` (2 min) se não definido
 
 ---
 
 ## T2.4 — Implementar o loader de configuração
 
-- [ ] S2.4.1 — Instalar dependência: `pnpm add jiti` no pacote config
-- [ ] S2.4.2 — Criar `packages/config/src/loader.ts`
-- [ ] S2.4.3 — Implementar função `findConfigFile(cwd: string): string | null`:
+- [x] S2.4.1 — Instalar dependência: `pnpm add jiti` no pacote config
+- [x] S2.4.2 — Criar `packages/config/src/loader.ts`
+- [x] S2.4.3 — Implementar função `findConfigFile(cwd: string): string | null`:
   - Procurar por `mocchi.config.ts` no diretório atual
   - Subir até a raiz se não encontrar (limitar a 5 níveis)
   - Retornar `null` se não encontrar
-- [ ] S2.4.4 — Implementar função `loadConfigFile(filePath: string): MocchiConfig`:
+- [x] S2.4.4 — Implementar função `loadConfigFile(filePath: string): MocchiConfig`:
   - Usar `jiti` para carregar o arquivo TypeScript sem compilação
   - Lidar com `export default` e `module.exports`
   - Validar que o retorno é um objeto
-- [ ] S2.4.5 — Tratar erro quando arquivo não existe
-- [ ] S2.4.6 — Tratar erro quando arquivo tem sintaxe inválida
-- [ ] S2.4.7 — Tratar erro quando arquivo exporta tipo errado
+- [x] S2.4.5 — Tratar erro quando arquivo não existe
+- [x] S2.4.6 — Tratar erro quando arquivo tem sintaxe inválida
+- [x] S2.4.7 — Tratar erro quando arquivo exporta tipo errado
 
 ---
 
 ## T2.5 — Implementar validação de configuração
 
-- [ ] S2.5.1 — Criar `packages/config/src/validator.ts`
-- [ ] S2.5.2 — Implementar `validateConfig(config: unknown): MocchiConfig`:
+- [x] S2.5.1 — Criar `packages/config/src/validator.ts`
+- [x] S2.5.2 — Implementar `validateConfig(config: unknown): MocchiConfig`:
   - Verificar que `project` é string não vazia
   - Verificar que `database.provider` é `'postgres'`
   - Verificar que `database.sourceEnv` é string não vazia
   - Verificar que `database.strategy` é `'sibling-database'`
   - Verificar que `migrations.command` é string não vazia
-- [ ] S2.5.3 — Criar classe de erro `ConfigValidationError` com campo `field` e `message`
-- [ ] S2.5.4 — Lançar `ConfigValidationError` com mensagem descritiva para cada falha
-- [ ] S2.5.5 — Adicionar sugestão de correção em cada mensagem de erro
+- [x] S2.5.3 — Criar classe de erro `ConfigValidationError` com campo `field` e `message`
+- [x] S2.5.4 — Lançar `ConfigValidationError` com mensagem descritiva para cada falha
+- [x] S2.5.5 — Adicionar sugestão de correção em cada mensagem de erro
 
 ---
 
 ## T2.6 — Implementar resolver de variáveis de ambiente
 
-- [ ] S2.6.1 — Criar `packages/config/src/env.ts`
-- [ ] S2.6.2 — Implementar função `resolveEnvVars(config: ResolvedMocchiConfig, env: NodeJS.ProcessEnv): ResolvedMocchiConfig`
-- [ ] S2.6.3 — Ler `DATABASE_URL` do env com base em `database.sourceEnv`
-- [ ] S2.6.4 — Lançar erro descritivo se variável de ambiente não existir
-- [ ] S2.6.5 — Nunca logar o valor completo da `DATABASE_URL` (segurança — pode ter senha)
+- [x] S2.6.1 — Criar `packages/config/src/env.ts`
+- [x] S2.6.2 — Implementar função `resolveEnvVars(config: ResolvedMocchiConfig, env: NodeJS.ProcessEnv): ResolvedMocchiConfig`
+- [x] S2.6.3 — Ler `DATABASE_URL` do env com base em `database.sourceEnv`
+- [x] S2.6.4 — Lançar erro descritivo se variável de ambiente não existir
+- [x] S2.6.5 — Nunca logar o valor completo da `DATABASE_URL` (segurança — pode ter senha)
 
 ---
 
 ## T2.7 — Implementar API pública do pacote
 
-- [ ] S2.7.1 — Criar `packages/config/src/index.ts`
-- [ ] S2.7.2 — Exportar: `defineMocchiConfig`, `MocchiConfig`, `ResolvedMocchiConfig`, `loadConfigFile`, `findConfigFile`, `validateConfig`, `resolveDefaults`, `ConfigValidationError`
-- [ ] S2.7.3 — Verificar que nenhum tipo interno vaza para a API pública
+- [x] S2.7.1 — Criar `packages/config/src/index.ts`
+- [x] S2.7.2 — Exportar: `defineMocchiConfig`, `MocchiConfig`, `ResolvedMocchiConfig`, `loadConfigFile`, `findConfigFile`, `validateConfig`, `resolveDefaults`, `ConfigValidationError`
+- [x] S2.7.3 — Verificar que nenhum tipo interno vaza para a API pública
 
 ---
 
 ## T2.8 — Testes do pacote config
 
-- [ ] S2.8.1 — Criar `packages/config/src/__tests__/loader.test.ts`
-- [ ] S2.8.2 — Testar: encontra `mocchi.config.ts` no diretório atual
-- [ ] S2.8.3 — Testar: retorna `null` quando arquivo não existe
-- [ ] S2.8.4 — Testar: lança erro com mensagem útil quando arquivo tem sintaxe inválida
-- [ ] S2.8.5 — Criar `packages/config/src/__tests__/validator.test.ts`
-- [ ] S2.8.6 — Testar: aceita config válida
-- [ ] S2.8.7 — Testar: rejeita config sem `project`
-- [ ] S2.8.8 — Testar: rejeita config sem `migrations.command`
-- [ ] S2.8.9 — Testar: mensagem de erro inclui nome do campo e sugestão
-- [ ] S2.8.10 — Criar `packages/config/src/__tests__/defaults.test.ts`
-- [ ] S2.8.11 — Testar: resolve prefix padrão `sbx`
-- [ ] S2.8.12 — Testar: resolve cleanup padrão `on-exit`
-- [ ] S2.8.13 — Testar: respeita override do usuário
+- [x] S2.8.1 — Criar `packages/config/src/__tests__/loader.test.ts`
+- [x] S2.8.2 — Testar: encontra `mocchi.config.ts` no diretório atual
+- [x] S2.8.3 — Testar: retorna `null` quando arquivo não existe
+- [x] S2.8.4 — Testar: lança erro com mensagem útil quando arquivo tem sintaxe inválida
+- [x] S2.8.5 — Criar `packages/config/src/__tests__/validator.test.ts`
+- [x] S2.8.6 — Testar: aceita config válida
+- [x] S2.8.7 — Testar: rejeita config sem `project`
+- [x] S2.8.8 — Testar: rejeita config sem `migrations.command`
+- [x] S2.8.9 — Testar: mensagem de erro inclui nome do campo e sugestão
+- [x] S2.8.10 — Criar `packages/config/src/__tests__/defaults.test.ts`
+- [x] S2.8.11 — Testar: resolve prefix padrão `sbx`
+- [x] S2.8.12 — Testar: resolve cleanup padrão `on-exit`
+- [x] S2.8.13 — Testar: respeita override do usuário
 
 ---
 
 ## T2.9 — Build e commit do pacote config
 
-- [ ] S2.9.1 — Rodar `pnpm build` no pacote config
-- [ ] S2.9.2 — Rodar `pnpm test` no pacote config
-- [ ] S2.9.3 — Rodar `pnpm lint` na raiz
-- [ ] S2.9.4 — Commit: `feat(config): implement config loading and validation`
+- [x] S2.9.1 — Rodar `pnpm build` no pacote config
+- [x] S2.9.2 — Rodar `pnpm test` no pacote config
+- [x] S2.9.3 — Rodar `pnpm lint` na raiz
+- [x] S2.9.4 — Commit: `feat(config): implement config loading and validation`
 
 ---
 
