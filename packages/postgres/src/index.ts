@@ -8,6 +8,8 @@ export {
   listDatabases,
   validateDatabaseName,
 } from './operations.js'
+export { generateSandboxName, SandboxNameError } from './naming.js'
+export type { NamingOptions } from './naming.js'
 export { wrapQuery } from './result.js'
 export type { PostgresQueryError, QueryResult } from './result.js'
 export { DatabaseUrlParseError, parseDatabaseUrl } from './url.js'

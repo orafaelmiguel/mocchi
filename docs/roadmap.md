@@ -681,8 +681,8 @@
 
 ## T3.6 — Implementar gerador de nome de sandbox
 
-- [ ] S3.6.1 — Criar `packages/postgres/src/naming.ts`
-- [ ] S3.6.2 — Implementar `generateSandboxName(opts: NamingOptions): string`:
+- [x] S3.6.1 — Criar `packages/postgres/src/naming.ts`
+- [x] S3.6.2 — Implementar `generateSandboxName(opts: NamingOptions): string`:
   ```ts
   type NamingOptions = {
     strategy: 'branch' | 'timestamp' | 'manual'
@@ -691,14 +691,14 @@
     branchName?: string
   }
   ```
-- [ ] S3.6.3 — Strategy `branch`: detectar branch git atual via `git rev-parse --abbrev-ref HEAD`
-- [ ] S3.6.4 — Sanitizar nome de branch: trocar `/`, `-`, espaços por `_`
-- [ ] S3.6.5 — Truncar para max 50 chars (considerando o prefixo + sufixo numérico)
-- [ ] S3.6.6 — Adicionar sufixo de 4 dígitos aleatórios para evitar colisão
-- [ ] S3.6.7 — Strategy `timestamp`: formato `YYYYMMDD_HHMMSS`
-- [ ] S3.6.8 — Strategy `manual`: usar `manualName` sanitizado com sufixo
-- [ ] S3.6.9 — Garantir que nome resultante começa com o `prefix`
-- [ ] S3.6.10 — Testar todas as strategies
+- [x] S3.6.3 — Strategy `branch`: detectar branch git atual via `git rev-parse --abbrev-ref HEAD`
+- [x] S3.6.4 — Sanitizar nome de branch: trocar `/`, `-`, espaços por `_`
+- [x] S3.6.5 — Truncar para max 50 chars (considerando o prefixo + sufixo numérico)
+- [x] S3.6.6 — Adicionar sufixo de 4 dígitos aleatórios para evitar colisão
+- [x] S3.6.7 — Strategy `timestamp`: formato `YYYYMMDD_HHMMSS`
+- [x] S3.6.8 — Strategy `manual`: usar `manualName` sanitizado com sufixo
+- [x] S3.6.9 — Garantir que nome resultante começa com o `prefix`
+- [x] S3.6.10 — Testar todas as strategies
 
 ---
 
