@@ -8,6 +8,7 @@ export {
   listDatabases,
   validateDatabaseName,
 } from './operations.js'
+export { executeSqlFile, executeSqlString, SqlExecutionError } from './executor.js'
 export { generateSandboxName, SandboxNameError } from './naming.js'
 export type { NamingOptions } from './naming.js'
 export { wrapQuery } from './result.js'

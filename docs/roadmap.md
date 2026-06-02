@@ -714,12 +714,12 @@
 
 ## T3.8 — Implementar executor de SQL
 
-- [ ] S3.8.1 — Criar `packages/postgres/src/executor.ts`
-- [ ] S3.8.2 — Implementar `executeSqlString(client: PostgresClient, sql: string): Promise<QueryResult>`
-- [ ] S3.8.3 — Implementar `executeSqlFile(client: PostgresClient, filePath: string): Promise<QueryResult>`
-- [ ] S3.8.4 — Ler arquivo com `fs.readFile` antes de executar
-- [ ] S3.8.5 — Tratar arquivo não encontrado com erro amigável
-- [ ] S3.8.6 — Tratar arquivo vazio (retornar sucesso sem rows)
+- [x] S3.8.1 — Criar `packages/postgres/src/executor.ts`
+- [x] S3.8.2 — Implementar `executeSqlString(client: PostgresClient, sql: string): Promise<QueryResult>`
+- [x] S3.8.3 — Implementar `executeSqlFile(client: PostgresClient, filePath: string): Promise<QueryResult>`
+- [x] S3.8.4 — Ler arquivo com `fs.readFile` antes de executar
+- [x] S3.8.5 — Tratar arquivo não encontrado com erro amigável
+- [x] S3.8.6 — Tratar arquivo vazio (retornar sucesso sem rows)
 
 ---
 
