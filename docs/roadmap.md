@@ -725,18 +725,18 @@
 
 ## T3.9 — Implementar proteções de segurança
 
-- [ ] S3.9.1 — Criar `packages/postgres/src/guards.ts`
-- [ ] S3.9.2 — Implementar `assertSandboxPrefix(name: string, prefix: string): void`:
+- [x] S3.9.1 — Criar `packages/postgres/src/guards.ts`
+- [x] S3.9.2 — Implementar `assertSandboxPrefix(name: string, prefix: string): void`:
   - Lança erro se `name` não começa com `prefix + '_'`
   - Mensagem: `"Refusing to drop '${name}': does not match sandbox prefix '${prefix}_'"`
-- [ ] S3.9.3 — Implementar `assertNotOriginalDatabase(sandboxName: string, originalName: string): void`:
+- [x] S3.9.3 — Implementar `assertNotOriginalDatabase(sandboxName: string, originalName: string): void`:
   - Lança erro se os nomes são iguais
-- [ ] S3.9.4 — Implementar `assertNotProductionHost(host: string): void`:
+- [x] S3.9.4 — Implementar `assertNotProductionHost(host: string): void`:
   - Verificar se host contém strings suspeitas: `production`, `prod`, `prd`, `live`
   - Aviso forte (não bloqueia — pode ser falso positivo)
-- [ ] S3.9.5 — Implementar `assertNotProductionEnv(env: NodeJS.ProcessEnv): void`:
+- [x] S3.9.5 — Implementar `assertNotProductionEnv(env: NodeJS.ProcessEnv): void`:
   - Bloquear se `NODE_ENV` contém `production`, `prod`, `prd`
-- [ ] S3.9.6 — Testar cada proteção individualmente
+- [x] S3.9.6 — Testar cada proteção individualmente
 
 ---
 

@@ -9,6 +9,13 @@ export {
   validateDatabaseName,
 } from './operations.js'
 export { executeSqlFile, executeSqlString, SqlExecutionError } from './executor.js'
+export {
+  assertNotOriginalDatabase,
+  assertNotProductionEnv,
+  assertNotProductionHost,
+  assertSandboxPrefix,
+  SafetyGuardError,
+} from './guards.js'
 export { generateSandboxName, SandboxNameError } from './naming.js'
 export type { NamingOptions } from './naming.js'
 export { wrapQuery } from './result.js'
