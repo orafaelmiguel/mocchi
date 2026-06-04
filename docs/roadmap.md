@@ -837,8 +837,8 @@
 
 ## T4.4 — Implementar controle de Docker Compose
 
-- [ ] S4.4.1 — Criar `packages/docker/src/control.ts`
-- [ ] S4.4.2 — Implementar `startService(opts: StartServiceOptions): Promise<void>`:
+- [x] S4.4.1 — Criar `packages/docker/src/control.ts`
+- [x] S4.4.2 — Implementar `startService(opts: StartServiceOptions): Promise<void>`:
   ```ts
   type StartServiceOptions = {
     composeFile: string
@@ -847,9 +847,9 @@
   }
   ```
   - Rodar `docker compose up -d <service>`
-- [ ] S4.4.3 — Implementar `isServiceRunning(opts: ServiceOptions): Promise<boolean>`:
+- [x] S4.4.3 — Implementar `isServiceRunning(opts: ServiceOptions): Promise<boolean>`:
   - Rodar `docker compose ps <service>` e verificar status
-- [ ] S4.4.4 — Implementar `waitForHealthy(opts: WaitHealthyOptions): Promise<void>`:
+- [x] S4.4.4 — Implementar `waitForHealthy(opts: WaitHealthyOptions): Promise<void>`:
   ```ts
   type WaitHealthyOptions = {
     composeFile: string
