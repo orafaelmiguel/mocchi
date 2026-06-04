@@ -819,19 +819,19 @@
 
 ## T4.3 — Implementar leitor de docker-compose.yml
 
-- [ ] S4.3.1 — Criar `packages/docker/src/compose.ts`
-- [ ] S4.3.2 — Instalar `js-yaml` para parsear YAML: `pnpm add js-yaml` e `@types/js-yaml`
-- [ ] S4.3.3 — Implementar `findComposeFile(cwd: string, fileName?: string): string | null`:
+- [x] S4.3.1 — Criar `packages/docker/src/compose.ts`
+- [x] S4.3.2 — Instalar `js-yaml` para parsear YAML: `pnpm add js-yaml` e `@types/js-yaml`
+- [x] S4.3.3 — Implementar `findComposeFile(cwd: string, fileName?: string): string | null`:
   - Procurar `docker-compose.yml`, `docker-compose.yaml`, `compose.yml`, `compose.yaml`
   - Usar `fileName` da config se fornecido
-- [ ] S4.3.4 — Implementar `parseComposeFile(filePath: string): ComposeFile`:
+- [x] S4.3.4 — Implementar `parseComposeFile(filePath: string): ComposeFile`:
   - Definir tipo `ComposeFile` com `services` como `Record<string, ComposeService>`
   - Definir tipo `ComposeService` com `image`, `ports`, `environment`, `healthcheck`
-- [ ] S4.3.5 — Implementar `findPostgresService(compose: ComposeFile): string | null`:
+- [x] S4.3.5 — Implementar `findPostgresService(compose: ComposeFile): string | null`:
   - Procurar service que tem image contendo `postgres`
   - Ou procurar service com porta 5432 exposta
   - Retornar nome do service
-- [ ] S4.3.6 — Testar com arquivo docker-compose.yml de exemplo
+- [x] S4.3.6 — Testar com arquivo docker-compose.yml de exemplo
 
 ---
 
