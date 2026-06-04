@@ -793,24 +793,24 @@
 
 ## T4.1 — Instalar dependências
 
-- [ ] S4.1.1 — Instalar `execa` no pacote docker: `pnpm add execa`
-- [ ] S4.1.2 — Verificar que `execa` funciona com ESM (versão 8+ é ESM-first)
+- [x] S4.1.1 — Instalar `execa` no pacote docker: `pnpm add execa`
+- [x] S4.1.2 — Verificar que `execa` funciona com ESM (versão 8+ é ESM-first)
 
 ---
 
 ## T4.2 — Implementar detecção de Docker
 
-- [ ] S4.2.1 — Criar `packages/docker/src/detect.ts`
-- [ ] S4.2.2 — Implementar `isDockerInstalled(): Promise<boolean>`:
+- [x] S4.2.1 — Criar `packages/docker/src/detect.ts`
+- [x] S4.2.2 — Implementar `isDockerInstalled(): Promise<boolean>`:
   - Rodar `docker --version`
   - Retorna `true` se exit code 0
-- [ ] S4.2.3 — Implementar `isDockerDaemonRunning(): Promise<boolean>`:
+- [x] S4.2.3 — Implementar `isDockerDaemonRunning(): Promise<boolean>`:
   - Rodar `docker info`
   - Retorna `true` se exit code 0
-- [ ] S4.2.4 — Implementar `getDockerVersion(): Promise<string | null>`:
+- [x] S4.2.4 — Implementar `getDockerVersion(): Promise<string | null>`:
   - Parsear output de `docker --version`
   - Retorna `null` se docker não instalado
-- [ ] S4.2.5 — Implementar `isDockerComposeAvailable(): Promise<boolean>`:
+- [x] S4.2.5 — Implementar `isDockerComposeAvailable(): Promise<boolean>`:
   - Tentar `docker compose version` (v2)
   - Fallback para `docker-compose --version` (v1)
   - Retorna `true` se algum funcionar

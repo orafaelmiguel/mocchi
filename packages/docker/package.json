@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "tsup": "^8.5.1"
+  },
+  "dependencies": {
+    "execa": "^9.6.1"
   }
 }
